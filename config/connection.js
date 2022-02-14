@@ -1,4 +1,4 @@
-requestAnimationFrame('dotenv').config();
+require('dotenv').config();
 // importing the sequelize constructor from the library
 const Sequelize = require('sequelize');
 
