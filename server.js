@@ -1,5 +1,7 @@
 const express = require('express');
-const sequelize = require('sequelize');
+
+const { sequelize } = require('./models/Product')
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -7,7 +9,7 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-app.use(routes);
+// app.use(routes);
 
 //need the routes file 
 
