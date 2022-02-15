@@ -15,7 +15,7 @@ Product.belongsTo(Category, {
     foreignKey: "seller_id",
   });
   
-  User.hasMany(Product, {
+  Product.hasMany(User, {
     foreignKey: "seller_id",
   });
   
@@ -23,7 +23,7 @@ Product.belongsTo(Category, {
     foreignKey: "user_id",
   });
   
-  User.hasMany(Product, {
+  Product.hasMany(User, {
     foreignKey: "seller_id",
   });
 
