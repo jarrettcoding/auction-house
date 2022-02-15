@@ -33,13 +33,26 @@ Product.init(
         }, 
         category_id: {
             type: DataTypes.STRING, 
-            references: 'category', 
-            key: 'id'
+            references:{
+                model:'Category', 
+                key: 'id'
+
+            }
+             
         }, 
         seller_id : {
             type: DataTypes.STRING, 
-            references: 'user', 
+            references:{
+             model:'User', 
             key: 'id'
+            }
+        },     
+           user_id : {
+            type: DataTypes.STRING, 
+            references:{
+            model:'User', 
+            key: 'id'
+            }
         }
     }, 
     {

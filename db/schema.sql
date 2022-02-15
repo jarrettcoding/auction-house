@@ -1,3 +1,4 @@
+
 -- DROP DATABASE
 DROP DATABASE IF EXISTS auction_house_db;
 
