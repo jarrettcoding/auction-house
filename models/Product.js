@@ -32,10 +32,14 @@ Product.init(
             allowNull: false
         }, 
         category: {
-            // need link to categories table
+            type: DataTypes.STRING, 
+            references: 'category', 
+            referencesKey: 'id'
         }, 
         seller_id : {
-            // need link to seller user id
+            type: DataTypes.STRING, 
+            references: 'user', 
+            referencesKey: 'id'
         }
     }, 
     {
