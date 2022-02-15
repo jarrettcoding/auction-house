@@ -1,8 +1,8 @@
 -- DROP DB 
-    DROP DATABASE IF EXISTS auction-house-db;
+    DROP DATABASE IF EXISTS auction_house_db;
 
 -- CERATE DB
-    CREATE DATABASE auction-house-db;
+    CREATE DATABASE auction_house_db;
 
 -- USE DB
-    USE auction-house-db;
+    USE auction_house_db;
