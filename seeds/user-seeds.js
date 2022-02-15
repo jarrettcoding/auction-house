@@ -1,7 +1,7 @@
 // require {User} from the model file 
 const userData = [
     {
-        user_name: 'Steve Mike',
+        username: 'Steve Mike',
         email:'smike@gmail.com',
         password:123456789,
         address: '2258 main street, Houston, Tx, 77095',
