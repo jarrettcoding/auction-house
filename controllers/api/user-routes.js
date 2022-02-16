@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Product, Category } = require('../../models');
+const { User } = require('../../models');
 
 // GET /api/users
 router.get('/', (req, res) => {
@@ -12,5 +12,5 @@ router.get('/', (req, res) => {
     });
 });
 
-
+// POST user
 module.exports = router;
