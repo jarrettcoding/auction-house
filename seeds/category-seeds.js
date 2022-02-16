@@ -1,3 +1,5 @@
+const { Category } = require("../models");
+
 // require the Category modles file 
 
 const catData = [
