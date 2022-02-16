@@ -33,26 +33,27 @@ Product.init(
         }, 
         category_id: {
             type: DataTypes.INTEGER, 
-            references:{
+            references: {
                 model:'category', 
                 key: 'id'
-
-            }  
+            }, 
+            allowNull: false 
         }, 
-        seller_id : {
+        seller_id: {
             type: DataTypes.INTEGER, 
-            references:{
-             model:'user', 
-            key: 'id'
-            }
+            references: {
+                model:'user', 
+                key: 'id'
+            }, 
+            allowNull: false
         },     
-        //    user_id : {
-        //     type: DataTypes.INTEGER, 
-        //     references:{
-        //     model:'user', 
-        //     key: 'id'
-        //     }
-        // }
+        buyer_id: {
+            type: DataTypes.INTEGER, 
+            references: {
+                model:'user', 
+                key: 'id'
+            }
+        }
     }, 
     {
         sequelize, 

@@ -38,5 +38,25 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// POST /api/products
+router.post('/', (req, res) => {
+    Product.create({
+        product_name: req.body.product_name,
+        price: req.body.price,
+        stock: req.body.stock,
+        description: req.body.description,
+        image: req.body.image,
+        category_id: req.body.category_id,
+        seller_id: req.body.seller_id,
+        buyer_id: req.body.buyer_id
+        })
+
+    .then(dbProductData => res.json(dbProductData))
+    .catch(err => {
+        consoole.log(err);
+        res.status(500).json(err);
+    });
+    });
+
 
 module.exports = router;
