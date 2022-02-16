@@ -2,9 +2,12 @@
   "name": "auction-house",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,8 +22,10 @@
   "homepage": "https://github.com/jarrettcoding/auction-house#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
+    "express-session": "^1.17.2",
     "mysql2": "^2.3.3",
     "sequelize": "^6.16.1"
   }
