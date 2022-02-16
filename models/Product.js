@@ -31,15 +31,28 @@ Product.init(
             type: DataTypes.STRING, 
             allowNull: false
         }, 
-        category: {
-            type: DataTypes.STRING, 
-            references: 'category', 
-            key: 'id'
+        category_id: {
+            type: DataTypes.INTEGER, 
+            references: {
+                model:'category', 
+                key: 'id'
+            }, 
+            allowNull: false 
         }, 
-        seller_id : {
-            type: DataTypes.STRING, 
-            references: 'user', 
-            key: 'id'
+        seller_id: {
+            type: DataTypes.INTEGER, 
+            references: {
+                model:'user', 
+                key: 'id'
+            }, 
+            allowNull: false
+        },     
+        buyer_id: {
+            type: DataTypes.INTEGER, 
+            references: {
+                model:'user', 
+                key: 'id'
+            }
         }
     }, 
     {
