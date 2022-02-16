@@ -1,4 +1,6 @@
-//  require {Product} from the model file 
+
+ const { Product } = require('../models'); 
+ 
 const productData = [
     {
      product_name: 'dragon katana',
