@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Product } = require('../models');
+const { Product, User, Category } = require('../models');
 
 router.get('/', (req, res) => {
     Product.findAll({
@@ -13,18 +13,15 @@ router.get('/', (req, res) => {
             'category_id'
         ],
     })
-    .then(dbPostData => {
-        // pass a single post object into the homepage template
-        const product = dbPostData.map(post => post.get({ plain: true }));
-        res.render('homepage', { 
-          product,
-         loggedIn: req.session.loggedIn 
-        });
+    .then(dbProductData => {
+            // pass a single post
+            const products = dbProductData.map(products => products.get({ plain: true }));
+            console.log(products)
+            res.render('homepage', { products });
     })
     .catch(err => {
-        console.log(err);
+        console.log(err)
         res.status(500).json(err);
     });
 });
-
 module.exports = router;
