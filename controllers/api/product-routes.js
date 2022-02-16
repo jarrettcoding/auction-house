@@ -58,6 +58,30 @@ router.post('/', (req, res) => {
     });
     });
 
+ // PUT /api/products/:id
+ router.put('/:id', (req, res) => {
+    //  expects 
+    //     product_name: 
+    //     price: 
+    //     stock: 
+    //     description: 
+    //     image: 
+    //     category_id: 
+    //     seller_id: 
+    //     buyer_id: 
+    Product.update({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbProductData => res.json(dbProductData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err)
+    })
+})
+
+
 // DELETE /api/products/:id
 router.delete('/:id', (req, res) => {
     Product.destroy({
