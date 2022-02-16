@@ -1,4 +1,5 @@
 // require the Category modles file 
+const {Category} = require("../models")
 
 const catData = [
     {
