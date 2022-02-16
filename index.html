@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./public/assets/css/style.css">
+        <title>auction house</title>
+    </head>
+    
+    <body>
+        <!-- start naviagtion -->
+        <header>
+            <h1>
+                <a href="/">auction house</a> 
+            </h1>
+            <nav>
+                <div class="auction-search">
+                    <input type="text" placeholder="search" id="search" name="search" />
+                    <button type="search">search</button>                     
+                </div>
+
+                <!-- placeholder nav names -->
+                <ul>
+                    <li>
+                        <a href="/">bids</a>
+                    </li>
+                    <li>
+                        <a href="/">log-in</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- current auction item w/ live chat below -->
+        <section class="current-auction">
+            <h2>- current auction -</h2>
+            <div class="auction-item">
+                <img src="/" alt="item" />
+            </div>
+            <div class="live-chat">
+                <!-- live chat -->
+                <input type="text" placeholder="comment" id="chat" name="comment" />
+                <button type="bid">bid</button>
+            </div>
+        </section>
+
+        <section class="upcoming-auction">
+            <h2>- upcoming auctions - </h2>
+            <div>
+                <div id="upcoming-1">
+                    <img src="/" />
+                    <p>item 1</p>
+                    <p>date</p>
+                    <p>initial bid</p>
+                </div>
+                <div id="upcoming-2">
+                    <img src="/" />
+                    <p>item 2</p>
+                    <p>date</p>
+                    <p>initial bid</p>
+                </div>
+                <div id="upcoming-3">
+                    <img src="/" />
+                    <p>item 3</p>
+                    <p>date</p>
+                    <p>initial bid</p>
+                </div>                   
+            </div>
+        </section>
+
+        <!-- start footer -->
+        <footer>
+            <h2>Project 2 by Crow Talons</h2>
+            <div>
+                <a href="/">github repo</a><br />
+                &copy; 2022 Crow Talons, UT Coding Bootcamp.   
+                <p>about us</p>             
+            </div>
+        </footer>
+        <!-- end footer -->
+    </body>
+</html>

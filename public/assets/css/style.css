@@ -1,0 +1,51 @@
+:root {
+    --primary-color: #fff;
+    --secondary-color: #000;
+    --tertiary-color: gray;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    color: var(--primary-color);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+/* header & nav bar styles start */
+
+header {
+    padding: 20px 35px;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+header nav {
+    margin: 7px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header nav ul {
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; */
+    list-style: none;
+}
