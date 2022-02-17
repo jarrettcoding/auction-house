@@ -69,11 +69,16 @@ router.post('/', (req, res) => {
     //     category_id: 
     //     seller_id: 
     //     buyer_id: 
-    Product.update({
+    Product.update(
+    {
+        price: req.body.price,
+    },
+    {
         where: {
             id: req.params.id
         }
-    })
+    }
+    )
     .then(dbProductData => res.json(dbProductData))
     .catch(err => {
         console.log(err);

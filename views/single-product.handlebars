@@ -12,9 +12,10 @@
             <P>quantity: {{product.stock}}</P>
             <p>Bidding price: {{product.price}}</p>
         </div>
-        <form class ="comment-form">
+        <form class ="bid-form">
             <div>
-                <textarea name ="comment -body"></textarea>
+                <lable for="bidding">place a</lable>
+                <input  type="text" id ="bid"  value="{{product.price}}"></input>
                 <div>
                 <button type="'submit"> bid </button>
                 </div>
@@ -24,3 +25,4 @@
     </section>
 
 </section> 
+<script src="/javascript/bid.js"></script>
