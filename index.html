@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="eng">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./public/assets/css/style.css">
-        <title>auction house</title>
-    </head>
-    
-    <body>
-        <!-- start naviagtion -->
-        <header>
-            <h1>
-                <a href="/">auction house</a> 
-            </h1>
-            <nav>
-                <div class="auction-search">
-                    <input type="text" placeholder="search" id="search" name="search" />
-                    <button type="search">search</button>                     
-                </div>
 
-                <!-- placeholder nav names -->
-                <ul>
-                    <li>
-                        <a href="/">bids</a>
-                    </li>
-                    <li>
-                        <a href="/">log-in</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./public/assets/css/style.css">
+    <title>auction house</title>
+</head>
 
-        <!-- current auction item w/ live chat below -->
+<body>
+    <!-- start naviagtion -->
+    <header>
+        <div class="header-container">
+            <div class="header-left">
+                <h1>
+                    <a href="/" title="home">auction house</a>
+                </h1>
+            </div>
+            <div class="header-middle">
+                <input type="text" placeholder="search" id="search" name="search" />
+                <button type="search">search</button>
+            </div>
+            <div class="header-right">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="/">bids</a>
+                        </li>
+                        <li>
+                            <a href="/">log-in</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="auctions">
         <section class="current-auction">
             <h2>- current auction -</h2>
             <div class="auction-item">
@@ -45,8 +50,17 @@
         </section>
 
         <section class="upcoming-auction">
-            <h2>- upcoming auctions - </h2>
-            <div>
+            <div class="flex-row">
+                <h2>- upcoming auctions -</h2>
+            </div>
+
+            <div class="upcoming-auctions">
+                <article class="upcoming-1">
+                    <img src="/" />
+                    <div class="auction details">
+                        <h3></h3>
+                    </div>
+                </article>
                 <div id="upcoming-1">
                     <img src="/" />
                     <p>item 1</p>
@@ -64,19 +78,25 @@
                     <p>item 3</p>
                     <p>date</p>
                     <p>initial bid</p>
-                </div>                   
+                </div>
             </div>
         </section>
 
-        <!-- start footer -->
-        <footer>
-            <h2>Project 2 by Crow Talons</h2>
-            <div>
-                <a href="/">github repo</a><br />
-                &copy; 2022 Crow Talons, UT Coding Bootcamp.   
-                <p>about us</p>             
-            </div>
-        </footer>
-        <!-- end footer -->
-    </body>
+    </main>
+
+    <!-- current auction item w/ live chat below -->
+
+    <!-- start footer -->
+    <footer>
+        <h2>Project 2 by Crow Talons</h2>
+        <div>
+            <p>
+                &copy; 2022 Crow Talons, UT Coding Bootcamp.
+            </p><br />
+            <a href="/">github repo</a>
+        </div>
+    </footer>
+    <!-- end footer -->
+</body>
+
 </html>
