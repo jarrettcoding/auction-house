@@ -1,23 +1,30 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
-const { Product, Category, User} = require('../models');
+const { Product, User, Category } = require('../models');
 
-// update the prices bu bidding 
-router.put('/:id',(req,res)=> {
-    Product.update({
-        price: req.body.price,
-        where:{
-            id:req.params.id
-        }
+router.get('/', (req, res) => {
+    Product.findAll({
+        attributes: [
+            'id',
+            'product_name',
+            'price',
+            'stock',
+            'description',
+            'image',
+            'category_id'
+        ],
     })
-    . then(newPrice => {
-        if(newPrice !== Product.prices){
-            res.status(404).json({ messsage: 'enter a valid value' })
-        }
-        res.json(newPrice)
-})
-.catch(err =>{
-    console.log(err);
-      res.status(500).json(err);
-})
-})
+    .then(dbProductData => {
+            // pass a single post
+            const products = dbProductData.map(products => products.get({ plain: true }));
+            console.log(products)
+            res.render('homepage', { products });
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(500).json(err);
+    });
+});
+
+
+module.exports = router;
+
