@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auction House</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>
+        <a href="/">Auction House</a>
+      </h1>
+       <nav>
+         {{!-- {{#if loggedIn}} --}}
+        <button id="logout" class="btn-no-style">logout</button>
+        {{!-- {{else}} --}}
+        <a href="/login">login</a>
+        {{!-- {{/if}} --}}
+        </nav>
+    </header>
+    <main>
+      {{{ body }}}
+      {{!-- above would be the stucture tom import the  handlebars body --}}
+    </main>
+    <footer>
+      Come Back Again!
+    </footer>
+  </div>
+  {{!-- {{#if loggedIn}} --}}
+  {{!-- sourcing our logout.js from public/javascript --}}
+<script src="/javascript/logout.js"></script>
+{{!-- {{/if}} --}}
+</body>
+
+</html>
