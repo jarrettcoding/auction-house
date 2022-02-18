@@ -16,29 +16,25 @@
         <a href="/">Auction House</a>
       </h1>
        <nav>
-         {{!-- {{#if loggedIn}} --}}
-        <a href="/signup">Sign up</a>
-         {{!-- {{#if loggedIn}} --}}
-        <a href="/dashboard">Sell</a>
+         {{#if loggedIn}}
+        <a href="/dashboard">Selling</a>
         <button id="logout" class="btn-no-style">Log out</button>
-        {{!-- {{else}} --}}
-
+        {{else}}
+        <a href="/signup">Sign up</a>
         <a href="/login">Log in</a>
-        {{!-- {{/if}} --}}
+        {{/if}}
         </nav>
     </header>
     <main>
       {{{ body }}}
-      {{!-- above would be the stucture tom import the  handlebars body --}}
     </main>
     <footer>
       Come Back Again!
     </footer>
   </div>
-  {{!-- {{#if loggedIn}} --}}
-  {{!-- sourcing our logout.js from public/javascript --}}
-<script src="/javascript/logout.js"></script>
-{{!-- {{/if}} --}}
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>

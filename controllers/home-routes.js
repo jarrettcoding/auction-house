@@ -18,8 +18,7 @@ router.get("/", (req, res) => {
       const products = dbProductData.map((products) =>
         products.get({ plain: true })
       );
-      console.log(products);
-      res.render("homepage", { products });
+      res.render("homepage", { products, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
