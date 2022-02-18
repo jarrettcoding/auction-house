@@ -19,10 +19,11 @@
          {{!-- {{#if loggedIn}} --}}
         <button id="signup" class="btn-no-style">signup</button>
         
+         {{#if loggedIn}}
         <button id="logout" class="btn-no-style">logout</button>
-        {{!-- {{else}} --}}
+        {{else}}
         <a href="/login">login</a>
-        {{!-- {{/if}} --}}
+        {{/if}}
         </nav>
     </header>
     <main>
@@ -33,10 +34,10 @@
       Come Back Again!
     </footer>
   </div>
-  {{!-- {{#if loggedIn}} --}}
+  {{#if loggedIn}}
   {{!-- sourcing our logout.js from public/javascript --}}
 <script src="/javascript/logout.js"></script>
-{{!-- {{/if}} --}}
+{{/if}}
 </body>
 
 </html>
