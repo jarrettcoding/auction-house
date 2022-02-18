@@ -20,7 +20,6 @@ async function bidFormHandler(event) {
     getPrice = (data) =>{
     let oldPrice = data.price
         bid(oldPrice);
-       
     }
 }
 
@@ -46,7 +45,7 @@ async function bid(data) {
         }
     });
     if(res.ok) {
-        // document.location.reload();
+        document.location.reload();
     } else {
         alert(res.statusText);
     }
@@ -55,30 +54,3 @@ async function bid(data) {
 }
   document.querySelector('.bid-form').addEventListener('submit', bidFormHandler);
 
-// working function
-
-// async function bidFormHandler(event) {
-//     event.preventDefault();
-//     const id = window.location.toString().split('/')[
-//         window.location.toString().split('/').length - 1
-//     ];
-//     const price = document.querySelector('#bid').value.trim();
-
-//     const res = await fetch(`/api/products/${id}`,{
-//         method: 'put',
-//         body:JSON.stringify({
-//             price
-//         }),
-//         headers: {
-//          'Content-Type': 'application/json'
-//         }
-//     });
-//     if(res.ok) {
-//         document.location.reload();
-//     } else {
-//         alert(res.statusText);
-//     }
-  
-//   }
-  
-//   document.querySelector('.bid-form').addEventListener('submit', bidFormHandler);
