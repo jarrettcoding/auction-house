@@ -17,13 +17,14 @@
       </h1>
        <nav>
          {{!-- {{#if loggedIn}} --}}
-        <button id="signup" class="btn-no-style">signup</button>
-        
-         {{#if loggedIn}}
-        <button id="logout" class="btn-no-style">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
+        <a href="/signup">Sign up</a>
+         {{!-- {{#if loggedIn}} --}}
+        <a href="/dashboard">Sell</a>
+        <button id="logout" class="btn-no-style">Log out</button>
+        {{!-- {{else}} --}}
+
+        <a href="/login">Log in</a>
+        {{!-- {{/if}} --}}
         </nav>
     </header>
     <main>
@@ -34,10 +35,10 @@
       Come Back Again!
     </footer>
   </div>
-  {{#if loggedIn}}
+  {{!-- {{#if loggedIn}} --}}
   {{!-- sourcing our logout.js from public/javascript --}}
 <script src="/javascript/logout.js"></script>
-{{/if}}
+{{!-- {{/if}} --}}
 </body>
 
 </html>

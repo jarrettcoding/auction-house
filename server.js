@@ -4,6 +4,7 @@ const session = require("express-session");
 const exphbs = require("express-handlebars");
 const path = require("path");
 require("dotenv").config();
+const bootstrap = require("bootstrap");
 
 const sequelize = require("./config/connection");
 

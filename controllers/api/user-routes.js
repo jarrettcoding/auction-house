@@ -37,6 +37,8 @@ router.get("/:id", (req, res) => {
 // POST /api/users to create account
 router.post("/", (req, res) => {
   User.create({
+    firstname: req.body.username,
+    lastname: req.body.username,
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
@@ -60,7 +62,7 @@ router.post("/login", (req, res) => {
     },
   }).then((dbUserData) => {
     if (!dbUserData) {
-      res.status(400).json({ message: "No user with that email address!" });
+      res.status(400).json({ message: "No user with that  username!" });
       return;
     }
     // Verify user
