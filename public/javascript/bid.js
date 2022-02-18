@@ -4,8 +4,9 @@ async function bidFormHandler(event) {
         window.location.toString().split('/').length - 1
     ];
     const price = document.querySelector('#bid').value.trim();
+
     const res = await fetch(`/api/products/${id}`,{
-        method: 'PUT',
+        method: 'put',
         body:JSON.stringify({
             price
         }),
