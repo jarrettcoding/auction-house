@@ -1,3 +1,5 @@
+const { Category } = require("../../models");
+
 async function newFormHandler(event) {
   event.preventDefault();
 
@@ -7,8 +9,8 @@ async function newFormHandler(event) {
     .querySelector("#product-description")
     .value.trim();
   const price = document.querySelector("#product-price").value.trim();
-
-  if (product_name && description && price && image) {
+  const Catname = document.querySelector("#product-category");
+  if (product_name && description && price && image && Catname) {
     await fetch("/api/products", {
       method: "POST",
       body: JSON.stringify({
@@ -16,6 +18,7 @@ async function newFormHandler(event) {
         product_name,
         description,
         price,
+        Catname,
       }),
       headers: {
         "Content-Type": "application/json",
