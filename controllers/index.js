@@ -7,6 +7,7 @@ const dashboardRoutes = require("./dashboard-routes.js");
 router.use("/api", apiRoutes);
 router.use("/", homeRoutes);
 router.use("/dashboard", dashboardRoutes);
+
 // Must be at the botton (LEARNED THE HARD WAY)
 router.use((req, res) => {
   res.status(404).end();

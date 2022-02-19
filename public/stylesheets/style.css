@@ -176,3 +176,7 @@
     padding: 1%;
     font-size: 110%;
   }
+  img{ 
+    max-width: 200px;
+    max-height: 200px;
+  }

@@ -71,7 +71,6 @@ router.post("/", upload.single("image"), (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-});
 
 // PUT /api/products/:id
 router.put("/:id", (req, res) => {
@@ -116,4 +115,6 @@ router.delete("/:id", (req, res) => {
     });
 });
 
+
 module.exports = router;
+
