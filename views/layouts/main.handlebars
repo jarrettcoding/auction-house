@@ -17,24 +17,24 @@
       </h1>
        <nav>
          {{#if loggedIn}}
-        <button id="logout" class="btn-no-style">logout</button>
+        <a href="/dashboard">Selling</a>
+        <button id="logout" class="btn-no-style">Log out</button>
         {{else}}
-        <a href="/login">login</a>
+        <a href="/signup">Sign up</a>
+        <a href="/login">Log in</a>
         {{/if}}
         </nav>
     </header>
     <main>
       {{{ body }}}
-      {{!-- above would be the stucture tom import the  handlebars body --}}
     </main>
     <footer>
       Come Back Again!
     </footer>
   </div>
   {{#if loggedIn}}
-  {{!-- sourcing our logout.js from public/javascript --}}
-<script src="/javascript/logout.js"></script>
-{{/if}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 <script src="/socket.io/socket.io.js"></script>

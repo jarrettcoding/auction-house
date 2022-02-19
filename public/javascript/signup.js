@@ -1,0 +1,33 @@
+async function signupFormHandler(event) {
+  event.preventDefault();
+  const firstname = document.querySelector("#firstname-signup").value.trim();
+  const lastname = document.querySelector("#lastname-signup").value.trim();
+  const address = document.querySelector("#address-signup").value.trim();
+  const username = document.querySelector("#username-signup").value.trim();
+  const email = document.querySelector("#email-signup").value.trim();
+  const password = document.querySelector("#password-signup").value.trim();
+
+  if (firstname && lastname && address && username && email && password) {
+    await fetch("/api/users", {
+      method: "post",
+      body: JSON.stringify({
+        firstname,
+        lastname,
+        address,
+        username,
+        email,
+        password,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+    if (response.ok) {
+      document.location.replace("/login");
+    } else {
+      alert(response.statusText);
+    }
+  }
+}
+
+document
+  .querySelector(".signup-form")
+  .addEventListener("submit", signupFormHandler);
