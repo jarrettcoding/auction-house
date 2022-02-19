@@ -21,7 +21,7 @@ Product.init(
         }, 
         stock: {
             type: DataTypes.INTEGER, 
-            allowNull: false
+            // allowNull: false
         }, 
         description: {
             type: DataTypes.STRING, 
@@ -29,7 +29,7 @@ Product.init(
         }, 
         image: {
             type: DataTypes.STRING, 
-            allowNull: false
+            // allowNull: false
         }, 
         category_id: {
             type: DataTypes.INTEGER, 
@@ -37,7 +37,7 @@ Product.init(
                 model:'category', 
                 key: 'id'
             }, 
-            allowNull: false 
+            // allowNull: false 
         }, 
         seller_id: {
             type: DataTypes.INTEGER, 
@@ -45,7 +45,7 @@ Product.init(
                 model:'user', 
                 key: 'id'
             }, 
-            allowNull: false
+            // allowNull: false
         },     
         buyer_id: {
             type: DataTypes.INTEGER, 

@@ -1,24 +1,26 @@
-const { Category } = require("../../models");
 
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const image = document.querySelector("#image");
+  const image = document.querySelector("#image").value.trim();
   const product_name = document.querySelector("#product_name").value.trim();
   const description = document
     .querySelector("#product-description")
     .value.trim();
   const price = document.querySelector("#product-price").value.trim();
-  const Catname = document.querySelector("#product-category");
-  if (product_name && description && price && image && Catname) {
-    await fetch("/api/products", {
-      method: "POST",
+  const stock = document.querySelector("#product-stock").value.trim();
+  const category_id = document.querySelector("#product-category").value.trim();
+
+  if (product_name && description && price && category_id) {
+    const response = await fetch(`/api/products`, {
+      method: 'POST',
       body: JSON.stringify({
-        image,
         product_name,
-        description,
         price,
-        Catname,
+        stock,
+        description,
+        image, 
+        category_id,
       }),
       headers: {
         "Content-Type": "application/json",
