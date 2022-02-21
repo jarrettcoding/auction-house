@@ -11,7 +11,7 @@ async function newFormHandler(event) {
   const stock = document.querySelector("#product-stock").value.trim();
   const category_id = document.querySelector("#product-category").value.trim();
 
-  if (product_name && description && price && category_id) {
+  if (product_name && description && price && stock && category_id) {
     const response = await fetch(`/api/products`, {
       method: 'POST',
       body: JSON.stringify({

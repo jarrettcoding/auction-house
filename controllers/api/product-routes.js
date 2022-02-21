@@ -40,7 +40,7 @@ router.get("/:id", (req, res) => {
 });
 
 // POST /api/products
-router.post("/",withAuth , (req, res) => {
+router.post("/", (req, res) => {
   console.log(req.res);
   Product.create({
     product_name: req.body.product_name,
@@ -49,8 +49,8 @@ router.post("/",withAuth , (req, res) => {
     description: req.body.description,
     image: req.body.image,
     category_id: req.body.category_id,
-    seller_id: req.session.seller_id,
-    buyer_id: req.body.buyer_id,
+    seller_id: req.session.user_id,
+    buyer_id: req.body.user_id,
   })
 
     .then((dbProductData) => res.json(dbProductData))
