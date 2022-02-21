@@ -9,37 +9,31 @@
 </head>
 
 <body>
-    <!-- start naviagtion -->
-    <header id="header">
-        <nav class="header-container">
-            <div class="header-left">
-                <h1>
-                    <a href="/" title="home">auction house</a>
-                </h1>
-            </div>
-            <div class="header-middle">
-                <input type="text" placeholder="search" id="search" name="search" />
-                <button type="search">search</button>
-            </div>
-            <div class="header-right">
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="/">bids</a>
-                        </li>
-                        <li>
-                            <a href="/">log-in</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+	<!-- navigation bar -->
+	<header class="navigation">
+		<nav>
+			<div class="icon"><h1>Auction <b id="red">House</b></h1>
+			</div>
+			<div class="search_box">
+				<input type="search" placeholder="search">
+				<span class="fa fa-search"></span>
+			</div>
+			<ol>
+				<li><a href="#">bid</a></li>
+				<li><a href="#">contact</a></li>
+				<li><a href="#">services</a></li>
+				<li><a href="#">about</a></li>
+				<li><a href="#">login</a></li>
+			</ol>
+		</nav>
+	</header>
 
-    <main class="auctions">
-        <section class="current-auction">
+	<!-- auctions -->
+	<main class="auctions">
+		<!-- jumbotron: current auction-->
+		<section class="current-auction">
             <h2>- current auction -</h2>
-            <div class="auction-item">
+            <div class="auction-items">
                 <img src="#" alt="item" />
             </div>
             <div class="live-chat">
@@ -49,54 +43,39 @@
             </div>
         </section>
 
-        <section class="upcoming-auction">
-            <div class="flex-row">
-                <h2>- upcoming auctions -</h2>
-            </div>
+		<!-- upcoming auctions -->
+		<section class="upcoming-auctions">
+			<h2>- upcoming auctions -</h2>
+			<article class="upcoming-1">
+				<img src="#" />
+				<div class="auction details">
+					<h3>upcoming 1</h3>
+				</div>
+			</article>
+			<article class="upcoming-2">
+				<img src="#" />
+				<div class="auction details">
+					<h3>upcoming 2</h3>
+				</div>
+			</article>
+			<article class="upcoming-3">
+				<img src="#" />
+				<div class="auction details">
+					<h3>upcoming 3</h3>
+				</div>
+			</article>
+		</section>
+	</main>
 
-            <div class="upcoming-auctions">
-                <article class="upcoming-1">
-                    <img src="/" />
-                    <div class="auction details">
-                        <h3></h3>
-                    </div>
-                </article>
-                <div id="upcoming-1">
-                    <img src="/" />
-                    <p>item 1</p>
-                    <p>date</p>
-                    <p>initial bid</p>
-                </div>
-                <div id="upcoming-2">
-                    <img src="/" />
-                    <p>item 2</p>
-                    <p>date</p>
-                    <p>initial bid</p>
-                </div>
-                <div id="upcoming-3">
-                    <img src="/" />
-                    <p>item 3</p>
-                    <p>date</p>
-                    <p>initial bid</p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- current auction item w/ live chat below -->
-
-    <!-- start footer -->
-    <footer>
-        <h2>Project 2 by Crow Talons</h2>
-        <div>
-            <p>
-                &copy; 2022 Crow Talons, UT Coding Bootcamp.
-            </p><br />
-            <a href="/">github repo</a>
-        </div>
-    </footer>
-    <!-- end footer -->
+	<!-- start footer -->
+	<footer>
+		<h2>Project 2 by Crow Talons</h2>
+		<div>
+			<p>
+				&copy; 2022 Crow Talons, UT Coding Bootcamp.
+			</p><br />
+			<a href="#">github repo</a>
+		</div>
+	</footer>
 </body>
-
 </html>
