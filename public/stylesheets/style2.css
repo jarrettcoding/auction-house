@@ -22,11 +22,17 @@
  }
  
  /* header styles */
+
+ header {
+     position: sticky;
+     position: -webkit-sticky;
+ }
+
  nav{
     display: flex;
     width: 100%;
     background: var(--color-two);
-    position: relative;
+    /* position: relative; */
     justify-content: space-between;
     text-align: center;
     padding: 15px 30px;
