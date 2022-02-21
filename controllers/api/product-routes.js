@@ -5,7 +5,14 @@ const withAuth = require("../../utils/auth");
 // GET /api/products
 router.get("/", (req, res) => {
   // Access our User model and run .findAll() method)
-  Product.findAll()
+  Product.findAll({
+    include:[
+      {
+        model: Category,
+        attributes:['category_name, event_name']
+      }
+    ]
+  })
     .then((dbProductData) => res.json(dbProductData))
     .catch((err) => {
       console.log(err);

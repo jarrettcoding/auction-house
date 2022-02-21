@@ -1,21 +1,20 @@
- <div id="hero">
-   <div class="navbar">
-     <div id ='image'>
-       {{!-- images feed from the slider.js --}}
-       </div>
-   </div>
- </div>
 
- <div class="slider">
-   <img src="res/left-arrow.png" id="prev">
-   <div class="preview" id="preview">
+
+ <div class="slideshow-container">
+   <div class="slides">
+   <div class="mySlides fade" id="preview">
  
  
     </div>
-    <button id="next">clickme</button>
-   <img src="res/right-arrow.png" id="">
-
+   </div>
  </div>
+
+ <!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
   
 <ol class="post-list">
   {{#each products}}
@@ -42,4 +41,5 @@
      {{/each}}
   </ol>
 </ol>
-<script src="/javascript/slider.js"></script>
+
+<script src="/javascript/product-info.js"></script>
