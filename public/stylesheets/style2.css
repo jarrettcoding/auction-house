@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --primary-color: #fff;
     --secondary-color: #000;
     --tertiary-color: gray;
@@ -32,6 +32,21 @@ header {
     position: -webkit-sticky;
     align-items: center;
     top: 0;
+}
+#header {
+    background-color: #f1f1f1; /* Grey background */
+    padding: 50px 10px; /* Some padding */
+    color: black;
+    text-align: center; /* Centered text */
+    font-size: 90px; /* Big font size */
+    font-weight: bold;
+    position: fixed; /* Fixed position - sit on top of the page */
+    top: 0;
+    width: 100%; /* Full width */
+    transition: 0.2s; /* Add a transition effect (when scrolling - and font size is decreased) */
+  }
+header div .header-conainer {
+    display: flex;
 }
 
 header a {
@@ -98,4 +113,31 @@ footer div a:hover {
 
 main {
     color: #000;
+} */
+
+.flexbox-container {
+    display: flex;
+}
+
+.flexbox-item {
+    width: 200px;
+    margin: 10px;
+    border: 3px solid #333;
+    background-color: #dfdfdf;
+}
+
+.flexbox-item-1 {
+    min-height: 100px;
+    flex-shrink: 0;
+}
+.flexbox-item-2 {
+    min-height: 200px;
+    flex-grow: 2;
+    flex-basis: 0;
+}
+
+.flexbox-item-3 {
+    min-height: 300px;
+    flex-grow: 1;
+    flex-basis: 0;
 }
