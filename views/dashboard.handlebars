@@ -1,0 +1,78 @@
+<section class="new-product-form">
+  <h2>
+    Selling
+  </h2>
+  
+  <form action="/upload">
+  <div>
+    <label for="img">Select image:</label>
+    <input type="text" id="image" name="image">
+  </div>
+    <div>
+      <label for="product_name">Title</label>
+      <input type="text" id="product_name" name="product-name" />
+    </div>
+    <div>
+      <label for="product-description">Description</label>
+      <input type="text" id="product-description" name="product-description" />
+    </div>
+    <div>
+      <label for="product-price">Price</label>
+      <input type="number" id="product-price" name="product-price" />
+    </div>
+    <div>
+      <label for="product-stock">STOCK</label>
+      <input type="text" id="product-stock" name="product-price" />
+    </div>
+    <div>
+      <label for="product-category">Category</label>
+      <input type="number" id="product-category" name="product-category"/>
+      
+    </div>
+   <input type="submit">
+  </form>
+</section> 
+
+  {{!-- <form class="new-product-form">
+    <div>
+      <label for="product_name">Title</label>
+      <input type="text" id="product_name" name="product-name" />
+    </div>
+    <div>
+      <label for="product-description">Description</label>
+      <input type="text" id="product-description" name="product-description" />
+    </div>
+    <div>
+      <label for="product-price">Price</label>
+      <input type="text" id="product-price" name="product-price" />
+    </div>
+    <button type="submit" class="btn">Post</button>
+  </form> --}}
+
+
+{{#if product.length}}
+<h2>
+  Selling
+</h2>
+<ol class="post-list">
+  {{#each products}}
+  <oi>
+    <article class="post">
+      <div class="title">
+        <h1>{{product_name}}</h1>
+        <p>Product Id: {{id}}</p>
+        <p>Product Name: {{product_name}}</p>
+        <p>Product Price: {{price}}</p>
+        <p>Product Stock: {{stock}}</p>
+        <p>Product Description: {{description}}</p>
+        {{!-- Neeeds anchor tag along with the photos with the path --}}
+        <p>Product Image: {{image}}</p>
+        <p>Product Category: {{category_id}}</p>
+      </div>
+    </article>
+     {{/each}}
+  </ol>
+</ol>
+{{/if}}
+
+<script src="/javascript/add-product.js"></script>

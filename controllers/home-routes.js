@@ -1,35 +1,68 @@
-const router = require('express').Router();
-const { Product, User, Category } = require('../models');
+const router = require("express").Router();
+const { Product, User, Category } = require("../models");
+var today = new Date();
+var date = today.getFullYear()+"-"+(today.getMonth()+1)+'-'+today.getDate();
+console.log(date);
 
-router.get('/', (req, res) => {
-    Product.findAll({
-        attributes: [
-            'id',
-            'product_name',
-            'price',
-            'stock',
-            'description',
-            'image',
-            'category_id'
-        ],
+router.get("/", (req, res) => {
+  Product.findAll({
+    attributes: [
+      "id",
+      "product_name",
+      "price",
+      "stock",
+      "description",
+      "image",
+      "category_id",
+    ],
+  })
+    .then((dbProductData) => {
+      // pass a single post
+      const products = dbProductData.map((products) =>
+        products.get({ plain: true })
+      );
+      res.render("homepage", { products, loggedIn: req.session.loggedIn });
     })
-    .then(dbProductData => {
-            // pass a single post
-            const products = dbProductData.map(products => products.get({ plain: true }));
-            console.log(products)
-            res.render('homepage', { products });
-    })
-    .catch(err => {
-        console.log(err)
-        res.status(500).json(err);
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-    res.render('login');
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  res.render("login");
 });
+router.get("/signup", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  res.render("signup");
+});
+
+router.get('/',(req,res)=>{
+  Category.findAll({
+      attributes:[
+          'id',
+          'category_name',
+          'event_time',
+      ],
+      include: [
+          {
+              model: Product,
+              attributes:['id','product_name','price','stock','category_id']
+          }
+      ]
+  })
+  .then(catData => res.json(catData))
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  })
+});
+
 module.exports = router;
