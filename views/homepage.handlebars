@@ -1,45 +1,28 @@
-
-
- <div class="slideshow-container">
-   <div class="slides">
-   <div class="mySlides fade" id="preview">
- 
- 
-    </div>
-   </div>
- </div>
-
+<div class="slider">
+  <!-- The first slide -->
+  <div class="item">
+  </div>
  <!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
+  <!-- Arrow buttons -->
+  <a class="previous" onclick="previousSlide()">&#10094;</a>
+  <a class="next" onclick="nextSlide()">&#10095;</a>
 </div>
-  
 <ol class="post-list">
   {{#each products}}
   <oi>
     <article class="post">
       <div class="title">
-        <h1>{{product_name}}</h1>
-        <p>Product Id: {{id}}</p>
-        <p>Product Name: {{product_name}}</p>
+        <img calss="img" src="/images/{{image}}" alt="{{description}}">
+
+        <a href="/product/{{id}}">{{product_name}}</a>
         <p>Product Price: {{price}}</p>
-        <p>Product Stock: {{stock}}</p>
+        <p>Product quantity: {{stock}}</p>
         <p>Product Description: {{description}}</p>
-        {{!-- Neeeds anchor tag along with the photos with the path --}}
-        <p>Product Image: {{image}}</p>
-        <p>Product Category: {{category_id}}</p>
       </div>
-      {{!-- <div class="meta">
-        {{vote_count}} point(s) by {{user.username}} on
-        {{created_at}}
-        |
-        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
-      </div> --}}
     </article>
      {{/each}}
   </ol>
 </ol>
 
 <script src="/javascript/product-info.js"></script>
+<script src="/javascript/slider.js"></script>

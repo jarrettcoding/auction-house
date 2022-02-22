@@ -7,6 +7,7 @@ const userRoutes = require('./user-routes');
 
 // tells router to use path from saved the consts above
 router.use('/users', userRoutes);
+
 router.use('/categories', categoryRoutes);
 router.use('/products', productRoutes);
 
