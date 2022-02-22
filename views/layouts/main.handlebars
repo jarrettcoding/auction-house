@@ -7,7 +7,24 @@
   <title>Auction House</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-
+<!-- navigation bar -->
+    <header class="navigation">
+        <nav>
+            <div class="icon"><h1>Auction <b id="red">House</b></h1>
+            </div>
+            <div class="search_box">
+                <input type="search" placeholder="search">
+                <span class="fa fa-search"></span>
+            </div>
+            <ol>
+                <li><a href="#">bid</a></li>
+                <li><a href="#">contact</a></li>
+                <li><a href="/dashboard">services</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">login</a></li>
+            </ol>
+        </nav>
+    </header>
 
 <body>
   <div class="wrapper">
@@ -25,7 +42,7 @@
         {{/if}}
         </nav>
     </header>
-    <main>
+    <main class="auctions">
       {{{ body }}}
     </main>
     <footer>

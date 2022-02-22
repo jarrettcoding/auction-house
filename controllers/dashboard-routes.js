@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
     include: [
       {
         model: Category,
-        attributes:['category_name,event_time']
+        attributes:['category_name','event_time']
       }
     ]
   })
