@@ -1,19 +1,19 @@
-{{!-- <div class="slider">
+<div class="slider">
   <!-- The first slide -->
   <div class="item">
   </div>
  <!-- The dots/circles -->
   <!-- Arrow buttons -->
   <a class="previous" onclick="previousSlide()">&#10094;</a>
-  <a class="next" onclick="nextSlide()">&#10095;</a> --}}
-{{!-- </div> --}}
+  <a class="next" onclick="nextSlide()">&#10095;</a>
+</div>
 <ol class="post-list">
   {{#each products}}
   <oi>
     <article class="post">
       <div class="title">
         <img calss="img" src="/images/{{image}}" alt="{{description}}">
-        <p>Product Category: {{category}}</p>
+
         <a href="/product/{{id}}">{{product_name}}</a>
         <p>Product Price: {{price}}</p>
         <p>Product quantity: {{stock}}</p>
