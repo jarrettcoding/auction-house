@@ -5,10 +5,12 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 const http = require('http'); 
 const socketio = require('socket.io'); 
+const formatMessage = require('./utils/messages'); 
 
 require("dotenv").config();
 
 const sequelize = require("./config/connection");
+const { format } = require("path");
 
 const app = express();
 const server = http.createServer(app); 
@@ -21,14 +23,14 @@ io.on('connection', socket => {
   console.log('New WS connected');
 
   // welcome message in chat
-  socket.emit('message', 'Welcome to Chat'); 
+  socket.emit('message', formatMessage('Admin', 'Welcome to the Auction!')); 
 
   // broadcast when a user connects to chat
-  socket.broadcast.emit('message', 'Someone has joined the bidding!'); 
+  socket.broadcast.emit('message', formatMessage('Admin', 'Someone has joined the bidding!')); 
 
   // listen for chat message
   socket.on('chatMessage', (msg) => {
-    io.emit('message', msg); 
+    io.emit('message', formatMessage('USER', msg)); 
   }); 
 });
 
