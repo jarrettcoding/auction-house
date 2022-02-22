@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Product, User, Category } = require("../models");
+const withAuth = require("../utils/auth");
 var today = new Date();
 var date = today.getFullYear()+"-"+(today.getMonth()+1)+'-'+today.getDate();
 console.log(date);
@@ -43,6 +44,11 @@ router.get("/signup", (req, res) => {
   }
   res.render("signup");
 });
+router.get("/logout", (req, res) => {
+  if (!req.session.loggedIn)
+  res.redirect("/");
+  return;
+})
 
 router.get('/',(req,res)=>{
   Category.findAll({
