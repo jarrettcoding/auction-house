@@ -18,6 +18,7 @@ async function bidFormHandler(event) {
     })
     
     getPrice = (data) =>{
+        console.log(data)
     let oldPrice = data.price
         bid(oldPrice);
     }

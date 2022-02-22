@@ -13,6 +13,12 @@ router.get("/", (req, res) => {
       "image",
       "category_id",
     ],
+    include: [
+      {
+        model: Category,
+        attributes:['category_name,event_time']
+      }
+    ]
   })
     .then((dbProductData) => {
       // pass a single post

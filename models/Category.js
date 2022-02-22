@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require("sequelize");
+const { Model, DataTypes, DATE } = require("sequelize");
 const sequelize = require("../config/connection");
 
 class Category extends Model {}
@@ -15,6 +15,10 @@ Category.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    event_time: {
+      type: DataTypes.DATEONLY,
+    }
+    
   },
   {
     sequelize,

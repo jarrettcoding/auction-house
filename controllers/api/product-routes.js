@@ -1,11 +1,26 @@
 const router = require("express").Router();
 const { Product, Category, User } = require("../../models");
+const { sequelize } = require("../../models/Product");
 const withAuth = require("../../utils/auth");
 
 // GET /api/products
 router.get("/", (req, res) => {
   // Access our User model and run .findAll() method)
-  Product.findAll()
+  Product.findAll({
+    attributes:[
+      'id',
+      "product_name",
+      'description',
+      'stock',
+      'price',
+      'image',
+    ],
+    include: [
+      {
+        model: Category,
+      }
+    ]
+  })
     .then((dbProductData) => res.json(dbProductData))
     .catch((err) => {
       console.log(err);
