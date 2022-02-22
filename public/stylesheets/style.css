@@ -16,6 +16,9 @@
     text-decoration: none;
     color: var(--color-one);
  }
+ .pname{
+   color: var(--color-two);
+ }
  a:hover {
   color: var(--color-two);
   background: var(--color-three);
