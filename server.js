@@ -41,19 +41,19 @@ const sess = {
     db: sequelize,
   }),
 };
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(session(sess));
-app.use(express.static(path.join(__dirname, "public")));
+server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
+server.use(session(sess));
+server.use(express.static(path.join(__dirname, "public")));
 
 const hbs = exphbs.create({});
 
-app.use(routes);
+server.use(routes);
 
-app.engine("handlebars", hbs.engine);
-app.set("view engine", "handlebars");
+server.engine("handlebars", hbs.engine);
+server.set("view engine", "handlebars");
 
-app.use(require("./controllers"));
+server.use(require("./controllers"));
 
 sequelize.sync({ force: false }).then(() => {
 
