@@ -6,11 +6,13 @@ const path = require('path');
 const http = require('http'); 
 const socketio = require('socket.io'); 
 const formatMessage = require('./utils/messages'); 
+const { userJoin, getCurrentUser } = require('./utils/chatUsers'); 
 
 require("dotenv").config();
 
 const sequelize = require("./config/connection");
 const { format } = require("path");
+const { userJoin, getCurrentUser } = require("./utils/chatUsers");
 
 const app = express();
 const server = http.createServer(app); 
@@ -20,17 +22,27 @@ const PORT = process.env.PORT || 3001;
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 io.on('connection', socket => {
+  socket.on('joinRoom', ({ username, room }) => {
+    const user = userJoin(socket.id, username, room); 
+
+    socket.join(user.room); 
+ 
+    // welcome message in chat
+    socket.emit('message', formatMessage('Admin', 'Welcome to the Auction!')); 
+
+    // broadcast when a user connects to chat
+    socket.broadcast
+    .to(user.room)
+    .emit('message', formatMessage('Admin', `${user.username} has joined the bidding!`)); 
+  }); 
+
   console.log('New WS connected');
-
-  // welcome message in chat
-  socket.emit('message', formatMessage('Admin', 'Welcome to the Auction!')); 
-
-  // broadcast when a user connects to chat
-  socket.broadcast.emit('message', formatMessage('Admin', 'Someone has joined the bidding!')); 
 
   // listen for chat message
   socket.on('chatMessage', (msg) => {
-    io.emit('message', formatMessage('USER', msg)); 
+    const user = getCurrentUser(socket.id); 
+
+    io.to(user.room).emit('message', formatMessage(user.username, msg)); 
   }); 
 });
 
