@@ -10,8 +10,8 @@
 <!-- navigation bar -->
     <header class="navigation">
         <nav>
-            <div class="icon"><h1>Auction <b id="red">House</b></h1>
-            </div>
+          <div  class="icon"><a href="/"> Auction <b id="red">House</b></a>
+			  </div>
             <div class="search_box">
                 <input type="search" placeholder="search">
                 <span class="fa fa-search"></span>
@@ -27,21 +27,7 @@
     </header>
 
 <body>
-  <div class="wrapper">
-    <header>
-      <h1>
-        <a href="/">Auction House</a>
-      </h1>
-       <nav>
-         {{#if loggedIn}}
-        <a href="/dashboard">Selling</a>
-        <button id="logout" class="btn-no-style">Log out</button>
-        {{else}}
-        <a href="/signup">Sign up</a>
-        <a href="/login">Log in</a>
-        {{/if}}
-        </nav>
-    </header>
+  
     <main class="auctions">
       {{{ body }}}
     </main>

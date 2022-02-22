@@ -4,7 +4,6 @@ const router = require('express').Router();
 const categoryRoutes = require('./category-routes');
 const productRoutes = require('./product-routes');
 const userRoutes = require('./user-routes');
-
 // tells router to use path from saved the consts above
 router.use('/users', userRoutes);
 
