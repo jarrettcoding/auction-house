@@ -8,6 +8,7 @@ const socketio = require('socket.io');
 const formatMessage = require('./utils/messages'); 
 const { userJoin, getCurrentUser } = require('./utils/chatUsers'); 
 
+require('session'); 
 require("dotenv").config();
 
 const sequelize = require("./config/connection");
@@ -21,9 +22,13 @@ const PORT = process.env.PORT || 3001;
 
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-io.on('connection', socket => {
+
+io.on('connection', socket => {  
   socket.on('joinRoom', ({ username, room }) => {
-    const user = userJoin(socket.id, username, room); 
+    const chatUserRoom = window.location.toString().split('/')[window.location.toString().split('/').length - 1]; 
+    const chatUsername = session.username;
+    const chatUserId = req.session.get('session_key'); 
+    const user = userJoin(chatUserId, chatUsername, chatUserRoom); 
 
     socket.join(user.room); 
  
@@ -36,11 +41,10 @@ io.on('connection', socket => {
     .emit('message', formatMessage('Admin', `${user.username} has joined the bidding!`)); 
   }); 
 
-  console.log('New WS connected');
-
   // listen for chat message
   socket.on('chatMessage', (msg) => {
-    const user = getCurrentUser(socket.id); 
+    const chatUserId = req.session.get('session_key'); 
+    const user = getCurrentUser(chatUserId); 
 
     io.to(user.room).emit('message', formatMessage(user.username, msg)); 
   }); 
