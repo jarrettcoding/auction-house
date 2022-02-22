@@ -1,6 +1,24 @@
 const router = require("express").Router();
 const { Product, Category, User } = require("../../models");
 const withAuth = require("../../utils/auth");
+const multer = require("multer");
+const path = require("path");
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "../public/images");
+  },
+  filename: function (req, file, cb) {
+    console.log(file);
+    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    cb(
+      null,
+      file.fieldname + "-" + uniqueSuffix + path.extname(file.originalname)
+    );
+  },
+});
+
+const upload = multer({ storage: storage });
 
 // GET /api/products
 router.get("/", (req, res) => {
@@ -40,8 +58,7 @@ router.get("/:id", (req, res) => {
 });
 
 // POST /api/products
-router.post("/", (req, res) => {
-  console.log(req.res);
+router.post("/", upload.single("image"), (req, res) => {
   Product.create({
     product_name: req.body.product_name,
     price: req.body.price,

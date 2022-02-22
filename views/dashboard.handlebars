@@ -3,10 +3,10 @@
     Selling
   </h2>
   
-  <form action="/upload">
+  <form  method="POST" enctype="multipart/form-data">
   <div>
-    <label for="img">Select image:</label>
-    <input type="text" id="image" name="image">
+    <label for="image">Select image:</label>
+    <input type="file" id="image" name="image">
   </div>
     <div>
       <label for="product_name">Title</label>
@@ -32,23 +32,6 @@
    <input type="submit">
   </form>
 </section> 
-
-  {{!-- <form class="new-product-form">
-    <div>
-      <label for="product_name">Title</label>
-      <input type="text" id="product_name" name="product-name" />
-    </div>
-    <div>
-      <label for="product-description">Description</label>
-      <input type="text" id="product-description" name="product-description" />
-    </div>
-    <div>
-      <label for="product-price">Price</label>
-      <input type="text" id="product-price" name="product-price" />
-    </div>
-    <button type="submit" class="btn">Post</button>
-  </form> --}}
-
 
 {{#if product.length}}
 <h2>
