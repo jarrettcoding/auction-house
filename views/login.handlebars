@@ -1,4 +1,6 @@
-<form class="login-form">
+{{!-- original code commented out --}}
+
+{{!-- <form class="login-form">
   <div>
     <label for="username-login">username:</label>
     <input type="text" id="user-login" />
@@ -10,5 +12,33 @@
   <div>
     <button type="submit">login</button>
   </div>
-</form>
+</form> --}}
+
+
+
+<div class="login">
+  <h2 class="active"> sign in </h2>
+
+  <h2 class="nonactive"> sign up </h2>
+  <form>
+    <input type="text" class="text" name="username">
+    <span>username</span>
+    <br>
+    <br>
+
+    <input type="password" class="text" name="password">
+    <span>password</span>
+    <br>
+
+    <input type="checkbox" id="checkbox-1-1" class="custom-checkbox" />
+    <label for="checkbox-1-1">Keep me logged in</label>
+    
+    <button class="signin">Sign In</button>
+
+    <hr>
+    <a href="#">Forgot Password?</a>
+  </form>
+</div>
+
+
 <script src="/javascript/login.js"></script>
