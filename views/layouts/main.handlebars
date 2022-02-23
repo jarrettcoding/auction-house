@@ -6,28 +6,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Auction House</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/style2.css">
+  <script src="https://kit.fontawesome.com/67c66657c7.js"></script>
+
 </head>
 
 
 <body>
   <div class="wrapper">
-    <header>
-      <h1>
-        <a href="/">Auction House</a>
-      </h1>
-       <nav>
-         {{#if loggedIn}}
-        <a href="/dashboard">Selling</a>
-        <button id="logout" class="btn-no-style">Log out</button>
-        {{else}}
-        <a href="/signup">Sign up</a>
-        <a href="/login">Log in</a>
-        {{/if}}
-        </nav>
+
+    {{!-- navigation bar style2.css --}}
+    <header class="navigation">
+      <nav>
+        <div class="icon">
+          <h1>
+            <a href="/">Auction <b id="red">House</b></a>
+          </h1>
+        </div>
+        <div class="search_box">
+          <input type="search" placeholder="search">
+          <span class="fa fa-search"></span>
+        </div>
+     {{#if loggedIn}}
+        <ol>
+          <li><a href="#">Selling</a></li>
+          <li><a href="#">Logout</a></li>
+          <li><a href="#">Contact</a></li>
+        </ol>
+      </nav>
+      {{else}}
+      <ol>
+        <li><a href="/signup">Sign up</a></li>
+        <li><a href="/login">Log in</a></li>
+      </ol>
+      {{/if}}
+      </nav>
     </header>
+
     <main>
       {{{ body }}}
     </main>
+    
     <footer>
       Come Back Again!
     </footer>
