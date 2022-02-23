@@ -27,7 +27,7 @@ io.on('connection', socket => {
   socket.on('joinRoom', ({ username, room }) => {
     const chatUserRoom = window.location.toString().split('/')[window.location.toString().split('/').length - 1]; 
     const chatUsername = session.username;
-    const chatUserId = req.session.get('session_key'); 
+    const chatUserId = session.user_id;  
     const user = userJoin(chatUserId, chatUsername, chatUserRoom); 
 
     socket.join(user.room); 
