@@ -17,14 +17,14 @@
                 <span class="fa fa-search"></span>
             </div>
             <ol>
-               <li><a href="#">Profile</a></li>
-                <li><a href="#">about</a></li>
+                <li><a href="/search">Search</a></li>
               {{#if loggedIn}}
+                <li><a href="/profile">Profile</a></li>
                 <li><a href="/dashboard">Sell</a></li>
                 <li><a id="logout" href="/logout">logout</a></li>
                 {{else}}
                 <li >><a href="/login">login</a></li>
-                <li><a href="#">contact</a></li>
+                <li><a href="/signup">Sign-Up</a></li>
                 <li><a href="#">about</a></li>
                 {{/if}}
             </ol>

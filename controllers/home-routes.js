@@ -49,6 +49,13 @@ router.get("/logout", (req, res) => {
   res.redirect("/");
   return;
 })
+router.get("/profile", (req, res) => {
+  if(req.session.loggedIn) {
+    res.render("/");
+    return;
+  }
+  res.render("profile")
+})
 
 router.get('/',(req,res)=>{
   Category.findAll({
@@ -69,6 +76,24 @@ router.get('/',(req,res)=>{
       console.log(err);
       res.status(500).json(err);
   })
+});
+
+router.get("/", withAuth, (req ,res) => {
+  User.findAll({
+      where: {
+          id: req.session.id
+      },
+  })
+  .then(dbUserData => {
+      const user = dbUserData.map(user => user.get({ plain: true }));
+      res.render('profile', {
+          user,
+      });
+  })
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err)
+  });
 });
 
 module.exports = router;
