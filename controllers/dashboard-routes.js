@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Category, Product, User } = require("../models");
+const withAuth = require("../utils/auth");
 
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
   Product.findAll({
     attributes: [
       "id",
@@ -13,6 +14,12 @@ router.get("/", (req, res) => {
       "image",
       "category_id",
     ],
+    include: [
+      {
+        model: Category,
+        attributes:['category_name','event_time']
+      }
+    ]
   })
     .then((dbProductData) => {
       // pass a single post

@@ -7,25 +7,34 @@
   <title>Auction House</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-
-
-<body>
-  <div class="wrapper">
-    <header>
-      <h1>
-        <a href="/">Auction House</a>
-      </h1>
-       <nav>
-         {{#if loggedIn}}
-        <a href="/dashboard">Selling</a>
-        <button id="logout" class="btn-no-style">Log out</button>
-        {{else}}
-        <a href="/signup">Sign up</a>
-        <a href="/login">Log in</a>
-        {{/if}}
+<!-- navigation bar -->
+    <header class="navigation">
+        <nav>
+            <div class="icon"><a href="/">Auction <b id="red">House</b></a>
+            </div>
+            <div class="search_box">
+                <input type="search" placeholder="search">
+                <span class="fa fa-search"></span>
+            </div>
+            <ol>
+               <li><a href="#">contact</a></li>
+                <li><a href="#">about</a></li>
+              {{#if loggedIn}}
+                <li><a href="#">bid</a></li>
+                <li><a href="/dashboard">Sell</a></li>
+                <li><a id="logout" href="/logout">logout</a></li>
+                {{else}}
+                <li >><a href="/login">login</a></li>
+                <li><a href="#">contact</a></li>
+                <li><a href="#">about</a></li>
+                {{/if}}
+            </ol>
         </nav>
     </header>
-    <main>
+
+<body>
+  
+    <main class="auctions">
       {{{ body }}}
     </main>
     <footer>

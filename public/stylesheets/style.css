@@ -1,25 +1,156 @@
-* {
-    box-sizing: border-box;
-  }
+:root {
+  --color-one: #ecf0f1;
+  --color-two: #242524;
+  --color-three: #aca9a9;
+  --color-four: #cf0030;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif ;
+}
   
+  a {
+    text-decoration: none;
+    color: var(--color-one);
+ }
+ .pname{
+   color: var(--color-two);
+ }
+ a:hover {
+  color: var(--color-two);
+  background: var(--color-three);
+}
+nav{
+  display: flex;
+  width: 100%;
+  background: var(--color-two);
+  /* position: relative; */
+  justify-content: space-between;
+  text-align: center;
+  padding: 15px 30px;
+}
+nav div #red{
+  color: var(--color-four);
+}
+nav .icon{
+  font-size: 35px;
+  font-weight: 800;
+  color: var(--color-one);
+}
+
+nav ol{
+  display: flex;
+  list-style: none;
+  margin: auto 0;
+}
+nav ol li{
+  margin: 0 2px;
+}
+
+nav .search_box{
+  display: flex;
+  margin: auto 0;
+  height: 35px;
+  line-height: 35px;
+}
+nav .search_box input{
+  border: none;
+  outline: none;
+  background: var(--color-one);
+  height: 100%;
+  padding: 0 10px;
+  font-size: 20px;
+  width: 350px;
+  border-radius: 15px;
+}
+
+nav .search_box span{
+  color: var(--color-two);
+  font-size: 20px;
+  background: var(--color-one);
+  height: 100%;
+  padding: 10px;
+  position: relative;
+  z-index: 1;
+  border-radius: 15px;
+}
+
+nav .search_box span:hover{
+  color: var(--color-one);
+}
+
+nav .search_box span::after{
+  height: 100%;
+  width: 0%;
+  content: '';
+  background: var(--color-four);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  transition: 0.3s;
+  border-radius: 15px;
+}
+nav .search_box span:hover::after{
+  width: 100%;
+}
+nav .bar{
+  position: relative;
+  margin: auto;
+  display: none;
+}
+nav .bar span{
+  position: absolute;
+  color: var(--color-one);
+  font-size: 35px;
+}
+
+/* footer styles */
+footer {
+  padding: 20px 35px;
+  color: var(--color-one);
+  background-color: var(--color-two);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  top: 0;
+}
+
+
+.upcoming-auctions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav ol li a, footer a{
+  font-size: 20px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+
   body, html {
     height: 100%;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
     color: #333;
+    background-color: #f3f3f3;
   }
+
+  header {
+    position: sticky;
+    position: -webkit-sticky;
+}
   
-  a {
-    text-decoration: none;
-    color: #225ca3;
-    font-weight: bold;
-    transition: color .1s;
-  }
-  
-  a:hover {
-    color: #3486eb;
-  }
+
   
   button {
     background-color: #225ca3;
@@ -176,3 +307,56 @@
     padding: 1%;
     font-size: 110%;
   }
+  img {
+    max-height: 200px ;
+
+  }
+  .slider{
+    max-width: 90%;
+    /* The position of the element is set relative to its original position: */
+    position: relative;
+    /* Center horizontally: */
+    margin: auto;
+    height: 300px;
+}
+/* The picture is scaled in relation to the parent element: */
+.slider .item img {
+    /* The element is resized to fill the block and maintain proportions: */
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+}
+/* Back and forward buttons: */
+.slider .previous, .slider .next {
+    /* Adds an icon to the cursor when it is over the button: */
+    cursor: pointer;
+    /* The position of the element is set relative to the borders of the browser: */
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    /* Styling the buttons themselves: */
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    /* Background fading on hover: */
+    transition: 0.6s ease;
+    /* Rounding the borders: */
+    border-radius: 0 3px 3px 0;
+}
+.slider .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+/* When you hover over the buttons, add the background of the buttons: */
+.slider .previous:hover,
+.slider .next:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+/* Slide animation: */
+.slider .item {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
