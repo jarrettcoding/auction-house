@@ -257,7 +257,7 @@ label {
   padding-left: 5px;
 }
 
-.signin {
+.signin, .signup {
    background-color: #aca9a9;
    color: #242524;
    width: 100%;
