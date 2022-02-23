@@ -122,10 +122,10 @@
     font-size: 35px;
  }
  
-/* login/sign up styles */
-/* note: refract code w/ above styles */
 
-.login-form {
+/* login/sign up styles start*/
+/* note: refract code w/ above styles */
+.login-form, .signup-form {
    background-color: var(--color-one);
 }
 
@@ -137,7 +137,7 @@
   letter-spacing: 1px;
 }
 
-.signin-container {
+.signin-container, .signup-container {
   position: relative;
   height: 560px;
   width: 405px;
@@ -152,7 +152,7 @@ form {
 }
 
 .active {
-  border-bottom: 2px solid #1161ed;
+  border-bottom: 2px solid #cf0030;
 }
 
 .nonactive {
@@ -214,17 +214,13 @@ input[type="password"] {
   color: #fff;
 }
 
-
-
 input {
   display: inline-block;
   padding-top: 20px;
   font-size: 14px;
 }
 
-h2,
-span,
-.custom-checkbox {
+h2, span, .custom-checkbox {
   margin-left: 20px;
 }
 
@@ -239,7 +235,7 @@ span,
 }
 
 .custom-checkbox:checked {
-  background-color: rgba(17, 97, 237, 1);
+  background-color: rgba(207, 0, 48, 1);
 }
 
 .custom-checkbox:checked:after {
@@ -262,43 +258,48 @@ label {
 }
 
 .signin {
-  background-color: #1161ed;
-  color: #FFF;
-  width: 100%;
-  padding: 10px 20px;
-  display: block;
-  height: 39px;
-  border-radius: 20px;
-  margin-top: 30px;
-  transition: all 0.5s ease-in-out;
-  border: none;
-  text-transform: uppercase;
-}
+   background-color: #aca9a9;
+   color: #242524;
+   width: 100%;
+   padding: 10px 20px;
+   display: block;
+   height: 39px;
+   border-radius: 20px;
+   margin-top: 30px;
+   transition: all 0.5s ease-in-out;
+   border: none;
+   text-transform: uppercase;
+ }
 
 .signin:hover {
-  background: #4082f5;
-  box-shadow: 0px 4px 35px -5px #4082f5;
-  cursor: pointer;
-}
+   background: #cf0030;
+   color: #ecf0f1;
+   box-shadow: 0px 4px 35px -5px #cf0030;
+   cursor: pointer;
+ }
 
-.signin:focus {
-  outline: none;
-}
-
-hr {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  top: 85px;
-  position: relative;
-}
-
-a {
-  text-align: center;
-  display: block;
-  top: 120px;
-  position: relative;
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.2);
-}
+ .signin:focus {
+   outline: none;
+ }
+ 
+ hr {
+   border: 1px solid rgba(255, 255, 255, 0.1);
+   top: 85px;
+   position: relative;
+ }
+ 
+ a {
+   text-align: center;
+   display: block;
+   top: 120px;
+   position: relative;
+   text-decoration: none;
+   color: rgba(255, 255, 255, 0.2);
+ }
+ 
+ a:hover {
+   color: #ecf0f1;
+ }
 
 
 
