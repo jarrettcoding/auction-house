@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const req = require("express/lib/request");
 const { Product, Category, User } = require("../../models");
 const { sequelize } = require("../../models/Product");
 const withAuth = require("../../utils/auth");
@@ -75,28 +76,26 @@ router.post("/", (req, res) => {
     });
 });
 // PUT /api/products/:id
-router.put("/:id", (req, res) => {
-  //  expects
-  //     product_name:
-  //     price:
-  //     stock:
-  //     description:
-  //     image:
-  //     category_id:
-  //     seller_id:
-  //     buyer_id:
-  Product.update({
+router.put("/:id", (req,res) => {
+  Product.update(req.body,{
+    price: req.body.price,
     where: {
       id: req.params.id,
     },
-  })
-    .then((dbProductData) => res.json(dbProductData))
+  }
+  )
+    .then((dbProductData) => {
+      if(!dbProductData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+      res.json(dbProductData);
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
-
 // DELETE /api/products/:id
 router.delete("/:id", (req, res) => {
   Product.destroy({
