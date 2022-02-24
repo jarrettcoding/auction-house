@@ -2,47 +2,56 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Auction House</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
-
-</head>
-<!-- navigation bar -->
-    <header class="navigation">
-        <nav>
-            <div class="icon"><a href="/">Auction <b id="red">House</b></a>
-            </div>
-            <div class="search_box">
-                <input type="search" placeholder="search">
-                <span class="fa fa-search"></span>
-            </div>
-            <ol>
-              <li><a href="#">contact</a></li>
-              <li><a href="#">about</a></li>
-              {{#if loggedIn}}
-                <li><a href="/dashboard">Add Products</a></li>
-                <li id="logout"><a>Logout</a></li>
-                {{else}}
-                <li><a href="/login">login</a></li>
-                 <li><a href="/signup">Signup</a></li>
-                 {{/if}}
-            </ol>
-        </nav>
-    </header>
-
-<body>
+  <link rel="stylesheet" href="/stylesheets/style2.css">
+  <script src="https://kit.fontawesome.com/67c66657c7.js"></script>
   
+</head>
+<body>
+  <div class="wrapper">
+
+    {{!-- navigation bar style2.css --}}
+    <header class="navigation">
+      <nav>
+        <div class="icon">
+          <h1>
+            <a href="/">Auction <b id="red">House</b></a>
+          </h1>
+        </div>
+        <div class="search_box">
+          <input type="search" placeholder="search">
+          <span class="fa fa-search"></span>
+        </div>
+        <ol>
+          {{#if loggedIn}}
+          <li><a href="#">contact</a></li>
+          <li><a href="#">about</a></li>  
+          <li><a href="/dashboard">Add Products</a></li>
+          <li id="logout"><a>Logout</a></li>
+          {{else}}
+          <li><a href="#">contact</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="/login">login</a></li>
+          <li><a href="/signup">Signup</a></li>
+          {{/if}}
+        </ol>
+      </nav>
+    </header>
     <main class="auctions">
       {{{ body }}}
     </main>
+    
     <footer>
       Come Back Again!
     </footer>
+    
   </div>
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{/if}}
 </body>
-
 </html>
