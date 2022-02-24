@@ -1,11 +1,8 @@
 async function bidFormHandler(event) {
     event.preventDefault();
-
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
-  
-
     const res = await fetch(`/api/products/${id}`,) 
     .then((res)=>{
         if(res.ok){
@@ -18,18 +15,17 @@ async function bidFormHandler(event) {
     })
     
     getPrice = (data) =>{
-        console.log(data)
     let oldPrice = data.price
         bid(oldPrice);
     }
+
 }
-
-  
-
 async function bid(data) {
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
+
+    
     const price = document.querySelector('#bid').value.trim();
     let oldPrice = data;
     console.log(oldPrice);

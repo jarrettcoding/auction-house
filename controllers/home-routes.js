@@ -57,26 +57,6 @@ router.get("/profile", (req, res) => {
   res.render("profile")
 })
 
-router.get('/',(req,res)=>{
-  Category.findAll({
-      attributes:[
-          'id',
-          'category_name',
-          'event_time',
-      ],
-      include: [
-          {
-              model: Product,
-              attributes:['id','product_name','price','stock','category_id']
-          }
-      ]
-  })
-  .then(catData => res.json(catData))
-  .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-  })
-});
 
 router.get("/", withAuth, (req ,res) => {
   User.findAll({

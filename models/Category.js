@@ -18,7 +18,7 @@ Category.init(
     event_time: {
       type: DataTypes.DATEONLY,
     }
-    
+
   },
   {
     sequelize,
