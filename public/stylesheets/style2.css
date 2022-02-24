@@ -16,33 +16,47 @@ body {
   background-color: var(--color-two);
 }
 
-header a, footer a {
+/* START HEADER & FOOTER */
+header a,
+footer a {
   text-decoration: none;
   color: var(--color-one);
 }
+
 header a:hover {
   color: var(--color-two);
   background: var(--color-three);
 }
-
-/* header styles */
 
 header {
   position: sticky;
   position: -webkit-sticky;
 }
 
+footer {
+  padding: 40px 35px;
+  color: var(--color-one);
+  background-color: var(--color-two);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  top: 0;
+}
+
 nav {
   display: flex;
   width: 100%;
   background: var(--color-two);
-  /* position: relative; */
+  position: relative;
   justify-content: space-between;
   text-align: center;
   padding: 15px 30px;
 }
 
-nav div #red, footer h2 #red2 {
+nav div #red,
+footer h2 #red2 {
   color: var(--color-four);
 }
 
@@ -51,15 +65,19 @@ nav .icon {
   font-weight: 800;
   color: var(--color-one);
 }
+
 nav ol {
   display: flex;
   list-style: none;
   margin: auto 0;
 }
+
 nav ol li {
   margin: 0 2px;
 }
-nav ol li a, footer a {
+
+nav ol li a,
+footer a {
   font-size: 20px;
   text-transform: capitalize;
   letter-spacing: 1px;
@@ -73,6 +91,7 @@ nav .search_box {
   height: 35px;
   line-height: 35px;
 }
+
 nav .search_box input {
   border: none;
   outline: none;
@@ -83,6 +102,7 @@ nav .search_box input {
   width: 350px;
   border-radius: 15px;
 }
+
 nav .search_box span {
   color: var(--color-two);
   font-size: 20px;
@@ -93,9 +113,11 @@ nav .search_box span {
   z-index: 1;
   border-radius: 15px;
 }
+
 nav .search_box span:hover {
   color: var(--color-one);
 }
+
 nav .search_box span::after {
   height: 100%;
   width: 0%;
@@ -108,9 +130,11 @@ nav .search_box span::after {
   transition: 0.3s;
   border-radius: 15px;
 }
+
 nav .search_box span:hover::after {
   width: 100%;
 }
+
 nav .bar {
   position: relative;
   margin: auto;
@@ -122,7 +146,15 @@ nav .bar span {
   font-size: 35px;
 }
 
-/* note: refract code w/ above styles */
+/* MAIN START */
+main {
+  background-color: var(--color-two);
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
 
 body {
   background-color: var(--color-three);
@@ -130,10 +162,11 @@ body {
   font-size: 14px;
   letter-spacing: 1px;
 }
-/* START {{dashboard}} {{login}} {{signup}} */
+
+/* WITHIN MAIN: {{dashboard}} {{homepage}} {{login}} {{signup}} {{single-product}}*/
 .container {
   position: relative;
-  height: 560px;
+  /* height: 560px; */
   width: 405px;
   margin: auto;
   padding: 60px 60px;
@@ -170,11 +203,11 @@ h2:first-child {
 }
 
 span {
-  text-transform: uppercase;
+  display: inline-block;
   font-size: 12px;
   opacity: 0.4;
-  display: inline-block;
   position: relative;
+  text-transform: uppercase;
   top: -65px;
   transition: all 0.5s ease-in-out;
 }
@@ -192,12 +225,14 @@ span {
   margin-top: 15px;
   transition: all 0.5s ease-in-out;
 }
+
 .text:focus {
   outline: 0;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   background: rgba(0, 0, 0, 0);
 }
+
 .text:focus + span {
   opacity: 0.6;
 }
@@ -299,18 +334,18 @@ section a:hover {
   color: var(--color-one);
 }
 
-/* {{single-product}} card */
+/* {{single-product}} CARD */
 .card {
   justify-content: left;
   flex: 1;
 }
-
 .card-body {
   margin: 20px;
   line-height: 1.5;
 }
 
-.bid-form, .post {
+.bid-form,
+.post {
   text-transform: uppercase;
 }
 
@@ -318,13 +353,7 @@ section a:hover {
   display: inline-block;
 }
 
-main {
-  background-color: var(--color-two);
-  padding: 50px;
-}
-
-/* footer styles */
-footer {
+/* footer {
   padding: 40px 35px;
   color: var(--color-one);
   background-color: var(--color-two);
@@ -333,7 +362,7 @@ footer {
   flex-wrap: wrap;
   align-items: center;
   top: 0;
-}
+} */
 
 /* .upcoming-auctions {
   display: flex;
