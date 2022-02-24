@@ -1,9 +1,9 @@
-<section class="new-product-form">
+{{!-- <section class="container new-product-form">
   <h2>
     Selling
   </h2>
   
-  <form action="/upload">
+  <form action="/upload" class="form dashboard">
   <div>
     <label for="img">Select image:</label>
     <input type="file" id="image" name="image" accept="image/*">
@@ -22,11 +22,11 @@
     </div>
     <div>
       <label for="product-category">Category</label>
-      <input type="text" id="product-category" name="product-category />
+      <input type="text" id="product-category" name="product-category" />
     </div>
    <input type="submit">
   </form>
-</section> 
+</section>  --}}
 
   {{!-- <form class="new-product-form">
     <div>
@@ -44,6 +44,37 @@
     <button type="submit" class="btn">Post</button>
   </form> --}}
 
+
+{{!-- styles2.css compatible --}}
+  <section class="new-product-form container">
+    <h2 class="active">
+      Selling
+    </h2>
+
+    <form action="/upload">
+      <div class="item-info">
+        <label for="img">Select image</label>
+        <input type="file" id="image" name="image" accept="image/*">
+      </div>
+      <div class="item-info">
+        <label for="product_name">Title</label>
+        <input type="text" class="text" id="product_name" name="product-name" />
+      </div>
+      <div class="item-info">
+        <label for="product-description">Description</label>
+        <input type="text" class="text" id="product-description" name="product-description" />
+      </div>
+      <div class="item-info">
+        <label for="product-price">Price</label>
+        <input type="text" class="text" id="product-price" name="product-price" />
+      </div>
+      <div class="item-info">
+        <label for="product-category">Category</label>
+        <input type="text" class="text" id="product-category" name="product-category" />
+      </div>
+      <input type="submit" value="Upload" class="button" />
+    </form>
+  </section>
 
 {{#if product.length}}
 <h2>
