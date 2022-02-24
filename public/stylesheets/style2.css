@@ -16,33 +16,47 @@ body {
   background-color: var(--color-two);
 }
 
-a {
+/* START HEADER & FOOTER */
+header a,
+footer a {
   text-decoration: none;
   color: var(--color-one);
 }
-a:hover {
+
+header a:hover {
   color: var(--color-two);
   background: var(--color-three);
 }
-
-/* header styles */
 
 header {
   position: sticky;
   position: -webkit-sticky;
 }
 
+footer {
+  padding: 40px 35px;
+  color: var(--color-one);
+  background-color: var(--color-two);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  top: 0;
+}
+
 nav {
   display: flex;
   width: 100%;
   background: var(--color-two);
-  /* position: relative; */
+  position: relative;
   justify-content: space-between;
   text-align: center;
   padding: 15px 30px;
 }
 
-nav div #red {
+nav div #red,
+footer h2 #red2 {
   color: var(--color-four);
 }
 
@@ -51,15 +65,19 @@ nav .icon {
   font-weight: 800;
   color: var(--color-one);
 }
+
 nav ol {
   display: flex;
   list-style: none;
   margin: auto 0;
 }
+
 nav ol li {
   margin: 0 2px;
 }
-nav ol li a, footer a {
+
+nav ol li a,
+footer a {
   font-size: 20px;
   text-transform: capitalize;
   letter-spacing: 1px;
@@ -73,6 +91,7 @@ nav .search_box {
   height: 35px;
   line-height: 35px;
 }
+
 nav .search_box input {
   border: none;
   outline: none;
@@ -83,6 +102,7 @@ nav .search_box input {
   width: 350px;
   border-radius: 15px;
 }
+
 nav .search_box span {
   color: var(--color-two);
   font-size: 20px;
@@ -93,9 +113,11 @@ nav .search_box span {
   z-index: 1;
   border-radius: 15px;
 }
+
 nav .search_box span:hover {
   color: var(--color-one);
 }
+
 nav .search_box span::after {
   height: 100%;
   width: 0%;
@@ -108,9 +130,11 @@ nav .search_box span::after {
   transition: 0.3s;
   border-radius: 15px;
 }
+
 nav .search_box span:hover::after {
   width: 100%;
 }
+
 nav .bar {
   position: relative;
   margin: auto;
@@ -122,23 +146,31 @@ nav .bar span {
   font-size: 35px;
 }
 
-/* note: refract code w/ above styles */
+/* MAIN START */
+main {
+  background-color: var(--color-two);
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
 
 body {
-  background-color: #aca9a9;
-  font-family: "Montserrat", sans-serif;
-  color: #ecf0f1;
+  background-color: var(--color-three);
+  color: var(--color-one);
   font-size: 14px;
   letter-spacing: 1px;
 }
-/* START {{dashboard}} {{login}} {{signup}} */
+
+/* WITHIN MAIN: {{dashboard}} {{homepage}} {{login}} {{signup}} {{single-product}}*/
 .container {
   position: relative;
-  height: 560px;
+  /* height: 560px; */
   width: 405px;
   margin: auto;
   padding: 60px 60px;
-  background: #242524;
+  background: var(--color-two);
   background-size: cover;
   border-radius: 20px;
   box-shadow: 0px 30px 60px -5px #000;
@@ -171,11 +203,11 @@ h2:first-child {
 }
 
 span {
-  text-transform: uppercase;
+  display: inline-block;
   font-size: 12px;
   opacity: 0.4;
-  display: inline-block;
   position: relative;
+  text-transform: uppercase;
   top: -65px;
   transition: all 0.5s ease-in-out;
 }
@@ -193,12 +225,14 @@ span {
   margin-top: 15px;
   transition: all 0.5s ease-in-out;
 }
+
 .text:focus {
   outline: 0;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   background: rgba(0, 0, 0, 0);
 }
+
 .text:focus + span {
   opacity: 0.6;
 }
@@ -206,7 +240,7 @@ span {
 input[type="text"],
 input[type="password"] {
   font-family: "Montserrat", sans-serif;
-  color: #fff;
+  color: var(--color-one);
 }
 
 input {
@@ -241,7 +275,7 @@ span,
   position: absolute;
   top: 1px;
   left: 4px;
-  color: #fff;
+  color: var(--color-one);
 }
 
 .custom-checkbox:focus {
@@ -256,8 +290,8 @@ label {
 }
 
 .button {
-  background-color: #aca9a9;
-  color: #242524;
+  background-color: var(--color-three);
+  color: var(--color-two);
   width: 100%;
   padding: 10px 20px;
   display: block;
@@ -271,7 +305,7 @@ label {
 
 .button:hover {
   background: #cf0030;
-  color: #ecf0f1;
+  color: var(--color-one);
   box-shadow: 0px 4px 35px -5px #cf0030;
   cursor: pointer;
 }
@@ -287,7 +321,7 @@ hr {
   position: relative;
 }
 
-a {
+section a {
   text-align: center;
   display: block;
   top: 120px;
@@ -296,22 +330,22 @@ a {
   color: rgba(255, 255, 255, 0.2);
 }
 
-a:hover {
-  color: #ecf0f1;
+section a:hover {
+  color: var(--color-one);
 }
 
-/* {{single-product}} card */
+/* {{single-product}} CARD */
 .card {
   justify-content: left;
   flex: 1;
 }
-
 .card-body {
   margin: 20px;
   line-height: 1.5;
 }
 
-.bid-form, .post {
+.bid-form,
+.post {
   text-transform: uppercase;
 }
 
@@ -319,10 +353,8 @@ a:hover {
   display: inline-block;
 }
 
-
-/* footer styles */
-footer {
-  padding: 20px 35px;
+/* footer {
+  padding: 40px 35px;
   color: var(--color-one);
   background-color: var(--color-two);
   display: flex;
@@ -330,10 +362,14 @@ footer {
   flex-wrap: wrap;
   align-items: center;
   top: 0;
-}
+} */
 
-.upcoming-auctions {
+/* .upcoming-auctions {
   display: flex;
   justify-content: space-around;
   align-items: center;
+} */
+
+footer div a:hover {
+  text-shadow: #cf0030;
 }

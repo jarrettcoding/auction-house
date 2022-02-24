@@ -26,6 +26,7 @@
           <input type="search" placeholder="search">
           <span class="fa fa-search"></span>
         </div>
+  
         <ol>
           {{#if loggedIn}}
           <li><a href="#">contact</a></li>
@@ -44,11 +45,16 @@
     <main class="auctions">
       {{{ body }}}
     </main>
-    
-    <footer>
-      Come Back Again!
-    </footer>
-    
+
+  <footer>
+    <h2>Project 2 by <b id="red2">Crow Talons</b></h2>
+    <div>
+      <a href="https://github.com/jarrettcoding/auction-house">github repo</a>
+      <br>
+      &copy; 2022 Crow Talons, UT Coding Bootcamp.
+    </div>
+  </footer>
+  
   </div>
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
