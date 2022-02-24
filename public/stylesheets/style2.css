@@ -125,9 +125,8 @@ nav .bar span {
 /* note: refract code w/ above styles */
 
 body {
-  background-color: #aca9a9;
-  font-family: "Montserrat", sans-serif;
-  color: #ecf0f1;
+  background-color: var(--color-three);
+  color: var(--color-one);
   font-size: 14px;
   letter-spacing: 1px;
 }
@@ -138,7 +137,7 @@ body {
   width: 405px;
   margin: auto;
   padding: 60px 60px;
-  background: #242524;
+  background: var(--color-two);
   background-size: cover;
   border-radius: 20px;
   box-shadow: 0px 30px 60px -5px #000;
@@ -206,7 +205,7 @@ span {
 input[type="text"],
 input[type="password"] {
   font-family: "Montserrat", sans-serif;
-  color: #fff;
+  color: var(--color-one);
 }
 
 input {
@@ -241,7 +240,7 @@ span,
   position: absolute;
   top: 1px;
   left: 4px;
-  color: #fff;
+  color: var(--color-one);
 }
 
 .custom-checkbox:focus {
@@ -256,8 +255,8 @@ label {
 }
 
 .button {
-  background-color: #aca9a9;
-  color: #242524;
+  background-color: var(--color-three);
+  color: var(--color-two);
   width: 100%;
   padding: 10px 20px;
   display: block;
@@ -271,7 +270,7 @@ label {
 
 .button:hover {
   background: #cf0030;
-  color: #ecf0f1;
+  color: var(--color-one);
   box-shadow: 0px 4px 35px -5px #cf0030;
   cursor: pointer;
 }
@@ -297,7 +296,7 @@ section a {
 }
 
 section a:hover {
-  color: #ecf0f1;
+  color: var(--color-one);
 }
 
 /* {{single-product}} card */
@@ -320,7 +319,7 @@ section a:hover {
 }
 
 main {
-  background-color: #242524;
+  background-color: var(--color-two);
   padding: 50px;
 }
 
