@@ -375,3 +375,11 @@ section a:hover {
 .bidding {
   display: inline-block;
 }
+
+.auction-items p {
+  text-transform: uppercase;
+}
+
+#pdescription {
+  text-transform: capitalize;
+}
