@@ -1,10 +1,11 @@
 const router = require("express").Router();
+const req = require("express/lib/request");
 const { Product, Category, User } = require("../../models");
 const { sequelize } = require("../../models/Product");
 const withAuth = require("../../utils/auth");
 
 // GET /api/products
-router.get("/", (req, res) => {
+router.get("/",(req, res) => {
   // Access our User model and run .findAll() method)
   Product.findAll({
     attributes:[
@@ -29,7 +30,7 @@ router.get("/", (req, res) => {
 });
 
 // GET /api/products/:1d
-router.get("/:id", (req, res) => {
+router.get("/:id",(req, res) => {
   Product.findOne({
     where: {
       id: req.params.id,
@@ -75,19 +76,27 @@ router.post("/", (req, res) => {
     });
 });
 // PUT /api/products/:id
-router.put("/:id", (req, res) => {
+router.put("/:id", (req,res) => {
   Product.update(req.body,{
+    price: req.body.price,
+    
     where: {
       id: req.params.id,
     },
-  })
-    .then((dbProductData) => res.json(dbProductData))
+  }
+  )
+    .then((dbProductData) => {
+      if(!dbProductData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+      res.json(dbProductData);
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
-
 // DELETE /api/products/:id
 router.delete("/:id", (req, res) => {
   Product.destroy({
