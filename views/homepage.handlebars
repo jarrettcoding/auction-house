@@ -1,11 +1,11 @@
 <ol class="post-list card container">
   {{#each products}}
-<div class="auction-items">
-<img class="img" src="/images/{{image}}" alt="{{description}}">
- <p><a class="pname" href="/product/{{id}}">{{product_name}}</a><p>
- <p>Product Price: {{price}}</p>
- <p>Product quantity: {{stock}}</p>
- <p>Product Description: {{description}}</p>
-</div>
+  <div class="auction-items">
+    <img class="img" src="/images/{{image}}" alt="{{description}}">
+    <p><a class="pname" href="/product/{{id}}">{{product_name}}</a><p>
+    <p>Product Price: {{price}}</p>
+    <p>Product quantity: {{stock}}</p>
+    <p>Product Description: <b id="pdescription">{{description}}</b></p>
+  </div>
  {{/each}}
 </ol>

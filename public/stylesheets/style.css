@@ -52,7 +52,7 @@ nav {
   position: relative;
   justify-content: space-between;
   text-align: center;
-  padding: 15px 20px;
+  padding: 15px 30px;
 }
 
 nav div #red,
@@ -104,7 +104,6 @@ nav .search_box input {
   transition: all 0.5s ease-in-out;
 }
 
-/* NEW CODE */
 nav .search_box input:focus {
   outline: 0;
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -119,7 +118,6 @@ nav .search_box span {
   height: 100%;
   padding: 8px;
   position: relative;
-  top:5px;
   z-index: 1;
   border-radius: 15px;
 }
@@ -217,7 +215,8 @@ span {
   opacity: 0.4;
   position: relative;
   text-transform: uppercase;
-  top: -65px;
+  width: 15px;
+  /* top: -65px; */
   transition: all 0.5s ease-in-out;
 }
 
@@ -375,4 +374,20 @@ section a:hover {
 
 .bidding {
   display: inline-block;
+}
+
+
+/* START {{homepage}} */
+.auction-items p {
+  text-transform: uppercase;
+}
+
+.pname {
+  color: var(--color-four);
+  text-decoration: none;
+}
+
+#pdescription {
+  text-transform: capitalize;
+  font-weight: normal;
 }
