@@ -4,7 +4,7 @@
       Selling
     </h2>
 
-    <form action="/upload">
+    <form method="post" enctype="multipart/form-data">
       <div class="item-info">
         <label for="img">Select image</label>
         <input type="file" id="image" name="image" accept="image/*">
@@ -25,6 +25,10 @@
       <div class="item-info">
         <label for="product-category">Category</label>
         <input type="text" class="text" id="product-category" name="product-category" />
+      </div>
+        <div class="item-info">
+        <label for="product-stock">Stock</label>
+        <input type="text" class="text" id="product-stock" name="product-stock" />
       </div>
       <input type="submit" value="Upload" class="button" />
     </form>
