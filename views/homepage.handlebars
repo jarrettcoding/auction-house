@@ -1,9 +1,9 @@
-<ol class="post-list">
+<ol class="post-list card container">
   {{#each products}}
   <oi>
     <article class="post">
       <div class="title">
-        <h1>{{product_name}}</h1>
+        <h1 class="active">{{product_name}}</h1>
         <p>Product Id: {{id}}</p>
         <p>Product Name: {{product_name}}</p>
         <p>Product Price: {{price}}</p>
@@ -20,6 +20,6 @@
         <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
       </div> --}}
     </article>
-     {{/each}}
-  </ol>
+    {{/each}}
+</ol>
 </ol>

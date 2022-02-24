@@ -311,7 +311,7 @@ a:hover {
   line-height: 1.5;
 }
 
-.bid-form {
+.bid-form, .post {
   text-transform: uppercase;
 }
 
