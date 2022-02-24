@@ -74,7 +74,7 @@ router.get("/:id", (req, res) => {
 
 // POST /api/products
 router.post("/uploads", upload.single("image"), (req, res) => {
-	console.log(req.file);
+	console.log(req.file, req.body);
 	Product.create({
 		product_name: req.body.product_name,
 		price: req.body.price,
@@ -84,17 +84,48 @@ router.post("/uploads", upload.single("image"), (req, res) => {
 		category_id: req.body.category_id,
 		seller_id: req.session.user_id,
 		buyer_id: req.body.user_id,
-	})
+	}).then((dbProductData) => {
+		if (!dbProductData) {
+			res.status(404).json({
+				message: "please upload a file",
+			});
+			return;
+		}
+		res.json(dbProductData);
+	});
+});
 
-		.then(() =>
-			res.json({
-				message: "product created succesfully",
-			})
-		)
+// PUT /api/products/:id
+router.put("/:id", (req, res) => {
+	Product.update(req.body, {
+		where: {
+			id: req.params.id,
+		},
+	})
+		.then((dbProductData) => res.json(dbProductData))
 		.catch((err) => {
 			console.log(err);
 			res.status(500).json(err);
 		});
 });
 
+// DELETE /api/products/:id
+router.delete("/:id", (req, res) => {
+	Product.destroy({
+		where: {
+			id: req.params.id,
+		},
+	})
+		.then((dbProductData) => {
+			if (!dbProductData) {
+				res.status(404).json({ message: "No user found with this id!" });
+				return;
+			}
+			res.json(dbProductData);
+		})
+		.catch((err) => {
+			console.log(err);
+			res.status(500).json(err);
+		});
+});
 module.exports = router;
