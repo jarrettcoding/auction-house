@@ -376,10 +376,18 @@ section a:hover {
   display: inline-block;
 }
 
+
+/* START {{homepage}} */
 .auction-items p {
   text-transform: uppercase;
 }
 
+.pname {
+  color: var(--color-four);
+  text-decoration: none;
+}
+
 #pdescription {
   text-transform: capitalize;
+  font-weight: normal;
 }
