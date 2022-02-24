@@ -16,11 +16,11 @@ body {
   background-color: var(--color-two);
 }
 
-a {
+header a, footer a {
   text-decoration: none;
   color: var(--color-one);
 }
-a:hover {
+header a:hover {
   color: var(--color-two);
   background: var(--color-three);
 }
@@ -334,4 +334,14 @@ footer {
   flex-wrap: wrap;
   align-items: center;
   top: 0;
+}
+
+/* .upcoming-auctions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+} */
+
+footer div a:hover {
+  text-shadow: #cf0030;
 }
