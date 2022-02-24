@@ -50,25 +50,4 @@ router.get("/logout", (req, res) => {
   return;
 })
 
-router.get('/',(req,res)=>{
-  Category.findAll({
-      attributes:[
-          'id',
-          'category_name',
-          'event_time',
-      ],
-      include: [
-          {
-              model: Product,
-              attributes:['id','product_name','price','stock','category_id']
-          }
-      ]
-  })
-  .then(catData => res.json(catData))
-  .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-  })
-});
-
 module.exports = router;

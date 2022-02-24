@@ -79,6 +79,7 @@ router.post("/", (req, res) => {
 router.put("/:id", (req,res) => {
   Product.update(req.body,{
     price: req.body.price,
+    
     where: {
       id: req.params.id,
     },

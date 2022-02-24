@@ -25,11 +25,11 @@ async function bid(data) {
         window.location.toString().split('/').length - 1
     ];
 
-    
-    const price = document.querySelector('#bid').value.trim();
+    const price = document.querySelector('#bid').value
+
     let oldPrice = data;
     console.log(oldPrice);
-    if(oldPrice > price || oldPrice === price){
+    if(oldPrice >= price){
         alert('Bidding value must be more than the current bid value 😔 ')
     } else {
     const res = await fetch(`/api/products/${id}`,{
