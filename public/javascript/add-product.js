@@ -1,7 +1,7 @@
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const image = document.querySelector("#image").value;
+  const image = document.querySelector("#image");
   const product_name = document.querySelector("#product_name").value.trim();
   const description = document
     .querySelector("#product-description")
