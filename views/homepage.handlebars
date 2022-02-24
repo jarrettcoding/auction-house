@@ -1,25 +1,22 @@
-<ol class="post-list">
+<main class="auctions">
+<section class="current-auction">
+<h2>- current auction -</h2>
   {{#each products}}
-  <oi>
+<div class="auction-items">
+<img calss="img" src="/images/{{image}}" alt="{{description}}">
+ <p><a class="pname" href="/product/{{id}}">{{product_name}}</a><p>
+ <p>Product Price: {{price}}</p>
+ <p>Product quantity: {{stock}}</p>
+ <p>Product Description: {{description}}</p>
+</div>
+    {{/each}}
+</section>
+
     <article class="post">
       <div class="title">
-        <h1>{{product_name}}</h1>
-        <p>Product Id: {{id}}</p>
-        <p>Product Name: {{product_name}}</p>
-        <p>Product Price: {{price}}</p>
-        <p>Product Stock: {{stock}}</p>
-        <p>Product Description: {{description}}</p>
-        {{!-- Neeeds anchor tag along with the photos with the path --}}
-        <img calss="img" src="/images/{{image}}" alt="{{description}}"
-        <p>Product Category: {{category_id}}</p>
+      <img calss="img" src="/images/{{image}}" alt="{{description}}">
       </div>
-      {{!-- <div class="meta">
-        {{vote_count}} point(s) by {{user.username}} on
-        {{created_at}}
-        |
-        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
-      </div> --}}
     </article>
-     {{/each}}
-  </ol>
-</ol>
+ 
+
+

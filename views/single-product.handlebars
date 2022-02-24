@@ -1,12 +1,8 @@
-<section calss="container">
-
-    <h1 class ="category-name">{{id}}</h1>
-    <section class="flex-row justify-center">
-        <section class ="card">
+  <section class="current-auction">
+        <h2>- current auction -</h2>
+         <div class="auction-items"></div>
             <p>category: {{product.category.category_name}}</p>
-            <img calss="img" src="/images/{{product.image}}" alt="{{product.description}}"
-        </section>
-        <div class ="card-body">
+            <img calss="img" src="/images/{{product.image}}" alt="{{product.description}}">
             <p>Product name: {{product.product_name}}</p>
             <p>Description: {{product.description}}</p>
             <P>quantity: {{product.stock}}</P>
@@ -17,12 +13,9 @@
                 <lable for="bidding">place a</lable>
                 <input  type="text" id ="bid"  value="{{product.price}}"></input>
                 <div>
-                <button type="'submit"> bid </button>
+                <button type="submit"> bid </button>
                 </div>
             </div>
         </form>
-
     </section>
-
-</section> 
 <script src="/javascript/bid.js"></script>
