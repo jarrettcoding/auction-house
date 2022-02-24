@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { Product, User, Category } = require('../models');
 const { sequelize } = require('../models/Category');
-router.get('/:id',(req,res) => {
+const withAuth = require('../utils/auth');
+router.get('/:id',withAuth,(req,res) => {
     Product.findOne({
         where: {
             id: req.params.id

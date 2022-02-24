@@ -76,16 +76,7 @@ router.post("/", (req, res) => {
 });
 // PUT /api/products/:id
 router.put("/:id", (req, res) => {
-  //  expects
-  //     product_name:
-  //     price:
-  //     stock:
-  //     description:
-  //     image:
-  //     category_id:
-  //     seller_id:
-  //     buyer_id:
-  Product.update({
+  Product.update(req.body,{
     where: {
       id: req.params.id,
     },
