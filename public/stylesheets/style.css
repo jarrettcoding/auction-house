@@ -52,7 +52,7 @@ nav {
   position: relative;
   justify-content: space-between;
   text-align: center;
-  padding: 15px 30px;
+  padding: 15px 20px;
 }
 
 nav div #red,
@@ -119,6 +119,7 @@ nav .search_box span {
   height: 100%;
   padding: 8px;
   position: relative;
+  top:5px;
   z-index: 1;
   border-radius: 15px;
 }
