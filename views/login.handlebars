@@ -14,29 +14,28 @@
   </div>
 </form> --}}
 
-<div class="signin container">
-  <h2 class="active"> sign in </h2>
+  <section class="container">
+    <h2 class="active"> sign in </h2>
+    <h2 class="nonactive"> sign up </h2>
+    <form>
+      <input type="text" class="text" name="username">
+      <span>username</span>
+      <br>
+      <br>
 
-  <h2 class="nonactive"> sign up </h2>
-  <form>
-    <input type="text" class="text" name="username">
-    <span>username</span>
-    <br>
-    <br>
+      <input type="password" class="text" name="password">
+      <span>password</span>
+      <br>
 
-    <input type="password" class="text" name="password">
-    <span>password</span>
-    <br>
+      <input type="checkbox" id="checkbox-1-1" class="custom-checkbox" />
+      <label for="checkbox-1-1">Keep me signed in</label>
 
-    <input type="checkbox" id="checkbox-1-1" class="custom-checkbox" />
-    <label for="checkbox-1-1">Keep me signed in</label>
-    
-    <button class="button">sign in</button>
+      <button class="button">sign in</button>
 
-    <hr>
-    <a href="#">Forgot Password?</a>
-  </form>
-</div>
+      <hr>
+      <a href="#">Forgot Password?</a>
+    </form>
+  </section>
 
 
 <script src="/javascript/login.js"></script>
