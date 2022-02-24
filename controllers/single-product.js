@@ -1,6 +1,10 @@
 const router = require('express').Router();
 const { Product, User, Category } = require('../models');
-router.get('/:id',(req,res) => {
+const { sequelize } = require('../models/Category');
+const withAuth = require('../utils/auth');
+
+router.get('/:id',withAuth,(req,res) => {
+
     Product.findOne({
         where: {
             id: req.params.id
@@ -17,7 +21,7 @@ router.get('/:id',(req,res) => {
         include: [
             {
             model :Category,
-            attributes:['id','category_name']
+            attributes:['id','category_name', 'event_time']
             }
         ],
     })

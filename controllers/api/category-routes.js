@@ -7,6 +7,7 @@ router.get('/',(req,res)=>{
         attributes:[
             'id',
             'category_name',
+            'event_time',
         ],
         include: [
             {

@@ -1,11 +1,8 @@
 async function bidFormHandler(event) {
     event.preventDefault();
-
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
-  
-
     const res = await fetch(`/api/products/${id}`,) 
     .then((res)=>{
         if(res.ok){
@@ -21,18 +18,18 @@ async function bidFormHandler(event) {
     let oldPrice = data.price
         bid(oldPrice);
     }
+
 }
-
-  
-
 async function bid(data) {
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
-    const price = document.querySelector('#bid').value.trim();
+
+    const price = document.querySelector('#bid').value
+
     let oldPrice = data;
     console.log(oldPrice);
-    if(oldPrice > price || oldPrice === price){
+    if(oldPrice >= price){
         alert('Bidding value must be more than the current bid value 😔 ')
     } else {
     const res = await fetch(`/api/products/${id}`,{
