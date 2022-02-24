@@ -42,7 +42,7 @@ nav {
   padding: 15px 30px;
 }
 
-nav div #red {
+nav div #red, footer h2 #red2 {
   color: var(--color-four);
 }
 
@@ -287,7 +287,7 @@ hr {
   position: relative;
 }
 
-a {
+section a {
   text-align: center;
   display: block;
   top: 120px;
@@ -296,7 +296,7 @@ a {
   color: rgba(255, 255, 255, 0.2);
 }
 
-a:hover {
+section a:hover {
   color: #ecf0f1;
 }
 
@@ -319,10 +319,14 @@ a:hover {
   display: inline-block;
 }
 
+main {
+  background-color: #242524;
+  padding: 50px;
+}
 
 /* footer styles */
 footer {
-  padding: 20px 35px;
+  padding: 40px 35px;
   color: var(--color-one);
   background-color: var(--color-two);
   display: flex;
@@ -330,10 +334,4 @@ footer {
   flex-wrap: wrap;
   align-items: center;
   top: 0;
-}
-
-.upcoming-auctions {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
