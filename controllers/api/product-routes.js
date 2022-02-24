@@ -5,7 +5,7 @@ const { sequelize } = require("../../models/Product");
 const withAuth = require("../../utils/auth");
 
 // GET /api/products
-router.get("/", (req, res) => {
+router.get("/",(req, res) => {
   // Access our User model and run .findAll() method)
   Product.findAll({
     attributes:[
@@ -30,7 +30,7 @@ router.get("/", (req, res) => {
 });
 
 // GET /api/products/:1d
-router.get("/:id", (req, res) => {
+router.get("/:id",(req, res) => {
   Product.findOne({
     where: {
       id: req.params.id,

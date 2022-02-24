@@ -18,12 +18,15 @@
                 <span class="fa fa-search"></span>
             </div>
             <ol>
-                <li><a href="#">bid</a></li>
-                <li><a href="#">contact</a></li>
-                <li><a href="/dashboard">services</a></li>
-                <li><a href="#">about</a></li>
-                <li><a href="#">login</a></li>
-                <li id="logout"><a href="#">logout</a></li>
+                <li><a href="#">Contact</a></li>
+                 <li><a href="#">About</a></li>
+              {{!-- {{#if loggedIn}} --}}
+                <li><a href="/dashboard">Add product</a></li>
+                <li id="logout"><a href="#">Logout</a></li>
+                {{!-- {{else}} --}}
+                  <li><a href="/signup">Signup</a></li>
+                <li id ='login'><a href="/login">Login</a></li>
+                {{!-- {{/if}} --}}
             </ol>
         </nav>
     </header>

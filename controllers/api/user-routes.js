@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../../models");
-const withAuth = require("../../utils/auth");
+
 
 // GET /api/users
 router.get("/", (req, res) => {
@@ -35,7 +35,7 @@ router.get("/:id", (req, res) => {
 });
 
 // POST /api/users to create account
-router.post("/", (req, res) => {
+router.post("/",(req, res) => {
   User.create({
     firstname: req.body.firstname,
     lastname: req.body.lastname,
@@ -59,6 +59,7 @@ router.post("/login", (req, res) => {
   User.findOne({
     where: {
       username: req.body.username,
+      password:req.body.password,
     },
   }).then((dbUserData) => {
     if (!dbUserData) {
@@ -82,6 +83,15 @@ router.post("/login", (req, res) => {
     });
   });
 });
+router.post("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
 
 router.put("/:id", (req, res) => {
   // if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
@@ -104,7 +114,7 @@ router.put("/:id", (req, res) => {
     });
 });
 // DELETE /api/users/1
-router.delete("/:id", (req, res) => {
+router.delete("/:id",(req, res) => {
   User.destroy({
     where: {
       id: req.params.id,
@@ -121,14 +131,5 @@ router.delete("/:id", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-});
-router.post("/logout", (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
 });
 module.exports = router;
