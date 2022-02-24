@@ -1,18 +1,28 @@
 <section class="container">
-  <h2 class="active"> sign in </h2>
-  <h2 class="inactive"> sign up </h2>
-<form class="login-form">
-  <div>
-    <label for="username-login">username:</label>
-    <input type="text" id="user-login" />
-  </div>
-  <div>
-    <label for="password-login">password:</label>
-    <input type="password" id="password-login" />
-  </div>
-  <div>
-    <button class="button" type="submit">login</button>
-  </div>
-</form>
-<script src="/javascript/login.js"></script>
+  <h2 class="category-name active">id</h2>
+  <section class="flex-row justify-center">
+    <section class="card">
+      <p>CATEGORY: {{product.category.category_name}}</p>
+      <img calss="img" src="/images/{{product.image}}" alt="{{product.description}}">
+    </section>
+    <div class="card-body">
+      <p>PRODUCT NAME: {{product.product_name}}</p>
+      <p>DESCRIPTION: {{product.description}}</p>
+      <P>QUANTITY: {{product.stock}}</P>
+      <p>BIDDING PRICE: {{product.price}}</p>
+    </div>
+
+    <form class="bid-form">
+      <div>
+        <lable for="bidding">place a</lable>
+        <input class="text" type="text" id="bid" value="{{product.price}}"></input>
+        <div>
+          <button class="button" type="submit"> bid </button>
+        </div>
+      </div>
+    </form>
+
+  </section>
 </section>
+<script src="/javascript/bid.js"></script>
+
