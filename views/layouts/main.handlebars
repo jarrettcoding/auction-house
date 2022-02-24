@@ -20,13 +20,13 @@
             <ol>
                 <li><a href="#">Contact</a></li>
                  <li><a href="#">About</a></li>
-              {{!-- {{#if loggedIn}} --}}
+              {{#if loggedIn}}
                 <li><a href="/dashboard">Add product</a></li>
                 <li id="logout"><a href="#">Logout</a></li>
-                {{!-- {{else}} --}}
+                {{else}}
                   <li><a href="/signup">Signup</a></li>
-                <li id ='login'><a href="/login">Login</a></li>
-                {{!-- {{/if}} --}}
+                <li><a href="/login">Login</a></li>
+                {{/if}}
             </ol>
         </nav>
     </header>
