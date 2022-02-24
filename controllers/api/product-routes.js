@@ -73,7 +73,7 @@ router.get("/:id", (req, res) => {
 });
 
 // POST /api/products
-router.post("/", upload.single("image"), (req, res) => {
+router.post("/uploads", upload.single("image"), (req, res) => {
 	console.log(req.file);
 	Product.create({
 		product_name: req.body.product_name,
@@ -86,7 +86,11 @@ router.post("/", upload.single("image"), (req, res) => {
 		buyer_id: req.body.user_id,
 	})
 
-		.then((dbProductData) => res.json(dbProductData))
+		.then(() =>
+			res.json({
+				message: "product created succesfully",
+			})
+		)
 		.catch((err) => {
 			console.log(err);
 			res.status(500).json(err);
