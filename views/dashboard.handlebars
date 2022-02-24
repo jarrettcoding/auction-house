@@ -3,7 +3,7 @@
       Selling
     </h2>
 
-    <form action="/upload">
+    <form action="http://localhost:3001/api/products/uploads" method="post" enctype="multipart/form-data">
       <div class="item-info">
         <label for="img">Select image</label>
         <input type="file" id="image" name="image" accept="image/*">
@@ -11,47 +11,26 @@
       <br>
       <div class="item-info">
         <label for="product_name">Title</label>
-        <input type="text" class="text" id="product_name" name="product-name" />
+        <input type="text" class="text" id="product_name" name="product_name" />
       </div>
       <div class="item-info">
         <label for="product-description">Description</label>
-        <input type="text" class="text" id="product-description" name="product-description" />
+        <input type="text" class="text" id="product-description" name="description" />
       </div>
       <div class="item-info">
         <label for="product-price">Price</label>
-        <input type="text" class="text" id="product-price" name="product-price" />
+        <input type="text" class="text" id="product-price" name="price" />
       </div>
       <div class="item-info">
         <label for="product-category">Category</label>
-        <input type="text" class="text" id="product-category" name="product-category" />
+        <input type="text" class="text" id="product-category" name="category_id" />
       </div>
-      <input type="submit" value="Upload" class="button" />>
+        <div class="item-info">
+        <label for="product-stock">Stock</label>
+        <input type="text" class="text" id="product-stock" name="stock" />
+      </div>
+      <input type="submit" value="Upload" class="button" />
     </form>
   </section>
 
-{{#if product.length}}
-<h2>
-  Selling
-</h2>
-<ol class="post-list">
-  {{#each products}}
-  <oi>
-    <article class="post">
-      <div class="title">
-        <h1>{{product_name}}</h1>
-        <p>Product Id: {{id}}</p>
-        <p>Product Name: {{product_name}}</p>
-        <p>Product Price: {{price}}</p>
-        <p>Product Stock: {{stock}}</p>
-        <p>Product Description: {{description}}</p>
-        {{!-- Neeeds anchor tag along with the photos with the path --}}
-        <p>Product Image: {{image}}</p>
-        <p>Product Category: {{category_id}}</p>
-      </div>
-    </article>
-     {{/each}}
-  </ol>
-</ol>
-{{/if}}
-
-<script src="/javascript/add-product.js"></script>
+{{!-- <script src="/javascript/add-product.js"></script> --}}
