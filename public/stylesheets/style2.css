@@ -300,6 +300,26 @@ a:hover {
   color: #ecf0f1;
 }
 
+/* {{single-product}} card */
+.card {
+  justify-content: left;
+  flex: 1;
+}
+
+.card-body {
+  margin: 20px;
+  line-height: 1.5;
+}
+
+.bid-form {
+  text-transform: uppercase;
+}
+
+.bidding {
+  display: inline-block;
+}
+
+
 /* footer styles */
 footer {
   padding: 20px 35px;
