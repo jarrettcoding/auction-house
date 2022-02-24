@@ -1,6 +1,4 @@
-<main class="auctions">
-<section class="current-auction">
-<h2>- current auction -</h2>
+<ol class="post-list card container">
   {{#each products}}
 <div class="auction-items">
 <img calss="img" src="/images/{{image}}" alt="{{description}}">
@@ -9,14 +7,5 @@
  <p>Product quantity: {{stock}}</p>
  <p>Product Description: {{description}}</p>
 </div>
-    {{/each}}
-</section>
-
-    <article class="post">
-      <div class="title">
-      <img calss="img" src="/images/{{image}}" alt="{{description}}">
-      </div>
-    </article>
- 
-
-
+ {{/each}}
+</ol>

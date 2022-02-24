@@ -1,21 +1,29 @@
-  <section class="current-auction">
-        <h2>- current auction -</h2>
-         <div class="auction-items"></div>
-            <p>category: {{product.category.category_name}}</p>
-            <img calss="img" src="/images/{{product.image}}" alt="{{product.description}}">
-            <p>Product name: {{product.product_name}}</p>
-            <p>Description: {{product.description}}</p>
-            <P>quantity: {{product.stock}}</P>
-            <p>Bidding price: {{product.price}}</p>
+<section class="container">
+
+    <h2 class="category-name active">id</h2>
+    <section class="flex-row justify-center card">
+      <section class="card-img">
+        <p>CATEGORY: {{product.category.category_name}}</p>
+        <img calss="img" src="/images/{{product.image}}" alt="{{product.description}}">
+      </section>
+      <div class="card-body">
+        <p>PRODUCT NAME: {{product.product_name}}</p>
+        <p>DESCRIPTION: {{product.description}}</p>
+        <P>QUANTITY: {{product.stock}}</P>
+        <p>BIDDING PRICE: {{product.price}}</p>
+      </div>
+
+      <form class="bid-form">
+        <div class="bidding">
+          <lable for="bidding">place a</lable>
+          <input class="text" type="text" id="bid" value="{{product.price}}"></input>
+          <div>
+            <button class="button" type="submit"> bid </button>
+          </div>
         </div>
-        <form class ="bid-form">
-            <div>
-                <lable for="bidding">place a</lable>
-                <input  type="text" id ="bid"  value="{{product.price}}"></input>
-                <div>
-                <button type="submit"> bid </button>
-                </div>
-            </div>
-        </form>
+      </form>
+
     </section>
-<script src="/javascript/bid.js"></script>
+  </section>
+  <script src="/javascript/bid.js"></script>
+
