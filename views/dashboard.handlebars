@@ -6,7 +6,7 @@
   <form action="/upload" class="form dashboard">
   <div>
     <label for="img">Select image:</label>
-    <input type="file" id="image" name="image" accept="image/*">
+    <input type="text" id="image" name="image">
   </div>
     <div>
       <label for="product_name">Title</label>
@@ -18,11 +18,15 @@
     </div>
     <div>
       <label for="product-price">Price</label>
-      <input type="text" id="product-price" name="product-price" />
+      <input type="number" id="product-price" name="product-price" />
+    </div>
+    <div>
+      <label for="product-stock">STOCK</label>
+      <input type="text" id="product-stock" name="product-price" />
     </div>
     <div>
       <label for="product-category">Category</label>
-      <input type="text" id="product-category" name="product-category" />
+      <input type="number" id="product-category" name="product-category"/>
     </div>
    <input type="submit">
   </form>
