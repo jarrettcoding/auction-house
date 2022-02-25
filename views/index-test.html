@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <title>auction house</title>
+</head>
+
+
+<body>
+	<!-- navigation bar -->
+	<header class="navigation">
+		<nav>
+			<div class="icon">
+				<h1>Auction <b id="red">House</b>
+				</h1>
+			</div>
+			<div class="search_box">
+				<input type="search" placeholder="search">
+				<span class="fa fa-search"></span>
+			</div>
+			<ol>
+				<li><a href="#">bid</a></li>
+				<li><a href="#">contact</a></li>
+				<li><a href="#">services</a></li>
+				<li><a href="#">about</a></li>
+				<li><a href="#">login</a></li>
+			</ol>
+		</nav>
+	</header>
+
+<main>
+	<section class="new-product-form container">
+		<h2 class="active">
+
+		  Selling
+		</h2>
+	
+		<form action="/upload">
+		  <div class="item-info">
+			<label for="img">Select image</label>
+			<input type="file" id="image" name="image" accept="image/*">
+		  </div>
+		  <br>
+		  <div class="item-info">
+			<label for="product_name">Title</label>
+			<input type="text" class="text" id="product_name" name="product-name" />
+		  </div>
+		  <div class="item-info">
+			<label for="product-description">Description</label>
+			<input type="text" class="text" id="product-description" name="product-description" />
+		  </div>
+		  <div class="item-info">
+			<label for="product-price">Price</label>
+			<input type="text" class="text" id="product-price" name="product-price" />
+		  </div>
+		  <div class="item-info">
+			<label for="product-category">Category</label>
+			<input type="text" class="text" id="product-category" name="product-category" />
+		  </div>
+		  <input type="submit" value="Upload" class="button" />>
+		</form>
+	  </section>
+</main>
+
+	<!-- start footer -->
+	<footer>
+		<h2>Project 2 by <b id="red2">Crow Talons</b></h2>
+		<div>
+		  <a href="https://github.com/jarrettcoding/auction-house">github <b id="red3">repo</b></a>
+		  <br>
+		  &copy; 2022 Crow Talons, UT Coding Bootcamp.
+		</div>
+	  </footer>
+</body>
+</html>
