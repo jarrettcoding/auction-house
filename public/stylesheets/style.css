@@ -155,6 +155,11 @@ nav .bar span {
   font-size: 35px;
 }
 
+span .button {
+  display: flex;
+  height: 10%;
+}
+
 /* MAIN START */
 main {
   background-color: var(--color-two);
