@@ -7,10 +7,10 @@ const multer = require("multer");
 const path = require("path");
 
 const storage = multer.diskStorage({
-	destination: function (req, file, cb) {
+	destination: (req, file, cb) => {
 		cb(null, path.join(__dirname, "../../public/images"));
 	},
-	filename: function (req, file, cb) {
+	filename: (req, file, cb) => {
 		const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
 		cb(
 			null,
@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
 	},
 });
 
-const upload = multer({ storage: storage });
+const upload = multer({ storage: storage }).single('image');
 
 // GET /api/products
 router.get("/", (req, res) => {
@@ -73,7 +73,7 @@ router.get("/:id", (req, res) => {
 });
 
 // POST /api/products
-router.post("/uploads", upload.single("image"), (req, res) => {
+router.post("/uploads", upload, (req, res) => {
 	console.log(req.file, req.body);
 	Product.create({
 		product_name: req.body.product_name,

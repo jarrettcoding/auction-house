@@ -11,29 +11,12 @@ async function newFormHandler(event) {
   const category_id = document.querySelector("#product-category").value.trim();
 
   if (product_name && description && price && stock && category_id && image) {
-    console.log(product_name, description, price, image, stock, category_id);
-    const response = await fetch(`/api/products`, {
-      method: "POST",
-      body: JSON.stringify({
-        product_name,
-        price,
-        stock,
-        description,
-        image,
-        category_id,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (response.ok) {
-      document.location.reload();
-    } else {
-      alert(response.statusText);
-    }
+    window.location.assign('/dashboard');
+  } else {
+    alert('Please check your input');
   }
 }
 
 document
-  .querySelector(".new-product-form")
+  .querySelector("#form")
   .addEventListener("submit", newFormHandler);
