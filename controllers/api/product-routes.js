@@ -78,7 +78,7 @@ router.get("/:id", (req, res) => {
 				res.status(404).json({ message: "No user found with this id!" });
 				return;
 			}
-			res.jodn(dbProductData)
+			res.json(dbProductData)
 		})
 		.catch((err) => {
 			console.log(err);
