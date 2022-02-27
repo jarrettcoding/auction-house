@@ -32,6 +32,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(session(sess));
 app.use(express.static(path.join(__dirname, "public")));
 
+
 const hbs = exphbs.create({});
 
 app.use(routes);
