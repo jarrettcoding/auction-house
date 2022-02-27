@@ -22,7 +22,7 @@ Auction House is an online platform that allows anyone from a private individual
 [Yohans Getaneh](https://github.com/yohans14)\
 [Nick Garza](https://github.com/thenickgarza)\
 [Edwin Escobar](https://github.com/escowin)\
-[Jarrett Fullington](https://github.com/jarrettcoding)\
+[Jarrett Fullington](https://github.com/jarrettcoding)
 
 ### Disclaimer
 This site is a proof of concept built as part of an educational project.
