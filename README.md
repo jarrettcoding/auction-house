@@ -18,11 +18,11 @@ Auction House is an online platform that allows anyone from a private individual
 [Main Page of Auction House website](public/images/auctionhouse_mainpage.PNG)
 
 ## Contributors
-[Yasir Habboo](https://github.com/Yasir19)
-[Yohans Getaneh](https://github.com/yohans14)
-[Nick Garza](https://github.com/thenickgarza)
-[Edwin Escobar](https://github.com/escowin)
-[Jarrett Fullington](https://github.com/jarrettcoding)
+[Yasir Habboo](https://github.com/Yasir19)\
+[Yohans Getaneh](https://github.com/yohans14)\
+[Nick Garza](https://github.com/thenickgarza)\
+[Edwin Escobar](https://github.com/escowin)\
+[Jarrett Fullington](https://github.com/jarrettcoding)\
 
 ### Disclaimer
 This site is a proof of concept built as part of an educational project.
