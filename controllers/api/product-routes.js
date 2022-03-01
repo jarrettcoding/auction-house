@@ -4,13 +4,16 @@ const { Product, Category, User } = require("../../models");
 const { sequelize } = require("../../models/Product");
 const withAuth = require("../../utils/auth");
 const multer = require("multer");
+
 const path = require("path");
 
+
+
 const storage = multer.diskStorage({
-	destination: function (req, file, cb) {
+	destination: (req, file, cb) => {
 		cb(null, path.join(__dirname, "../../public/images"));
 	},
-	filename: function (req, file, cb) {
+	filename: (req, file, cb) => {
 		const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
 		cb(
 			null,
@@ -19,7 +22,18 @@ const storage = multer.diskStorage({
 	},
 });
 
-const upload = multer({ storage: storage });
+const fileFilter = (req, file ,cb) => {
+	if(file.mimetype === 'image/jpeg' || file.mometype === 'image/png') {
+		cb(null,true)
+	} else {
+		cb(null, false)
+	}
+};
+
+const upload = multer({ 
+	storage: storage,
+	fileFilter
+ });
 
 // GET /api/products
 router.get("/", (req, res) => {
@@ -64,7 +78,7 @@ router.get("/:id", (req, res) => {
 				res.status(404).json({ message: "No user found with this id!" });
 				return;
 			}
-			res.json(dbProductData);
+			res.json(dbProductData)
 		})
 		.catch((err) => {
 			console.log(err);
@@ -72,9 +86,11 @@ router.get("/:id", (req, res) => {
 		});
 });
 
+
+
 // POST /api/products
-router.post("/uploads", upload.single("image"), (req, res) => {
-	console.log(req.file, req.body);
+router.post("/", upload.single('image'), (req, res) => {
+	console.log(req.file);
 	Product.create({
 		product_name: req.body.product_name,
 		price: req.body.price,
@@ -91,10 +107,13 @@ router.post("/uploads", upload.single("image"), (req, res) => {
 			});
 			return;
 		}
-		res.json(dbProductData);
-	});
+	res.json(dbProductData);
+	})
+	.catch((err) => {
+		console.log(err);
+		res.status(500).json(err);
 });
-
+});
 // PUT /api/products/:id
 router.put("/:id", (req, res) => {
 	Product.update(req.body, {
